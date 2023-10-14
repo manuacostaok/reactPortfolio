@@ -1,0 +1,156 @@
+.contact-section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #171c28;
+  }
+  
+  .contact-div {
+    background-color: white;
+    margin-top: 30px;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  
+  .contact-section h2 {
+    margin-top: 50px;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  .form button {
+    padding: 0.6rem;
+    width: 60%;
+    margin-top: 40px;
+    background-color: white;
+    border: 2px solid #171c28;
+    color: #171c28;
+    border-radius: 50px;
+    font-size: 17px;
+  }
+  
+  .form button:active {
+    background-color: #171c28;
+    border: 2px solid #fe4e5f;
+    color: #fe4e5f;
+  }
+  
+  .input-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 80%;
+  }
+  
+  .input-div label {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: rgb(146, 145, 145);
+  }
+  
+  .input-div input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(158, 158, 158);
+  }
+  
+  .input-div textarea {
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid rgb(158, 158, 158);
+    resize: none;
+  }
+  
+  .contact-section p {
+    color: rgb(194, 194, 194);
+    margin-bottom: 40px;
+  }
+  
+  .contact-section a {
+    color: rgb(194, 194, 194);
+    margin-bottom: 40px;
+    font-size: 15px;
+    border: 1px solid rgb(194, 194, 194);
+    padding: 0.6rem;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+  
+  .contact-section a:active {
+    background-color: rgb(194, 194, 194);
+    color: #7510f7;
+    border: 1px solid #7510f7;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .contact-section h2 {
+      font-size: 30px;
+    }
+  
+    .contact-div {
+      width: 30%;
+    }
+  
+    .form {
+      width: 100%;
+    }
+  
+    .input-div {
+      margin-top: 30px;
+    }
+  
+    .input-div label {
+      font-size: 19px;
+    }
+  
+    .input-div input {
+      padding: 0.8rem;
+    }
+    .input-div textarea {
+      padding: 1rem;
+      height: 130px;
+      margin-bottom: 20px;
+    }
+  
+    .form button {
+      font-size: 19px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  
+    .form button:disabled {
+      cursor: not-allowed;
+    }
+  
+    .form button:hover {
+      background-color: #171c28;
+      color: white;
+    }
+  
+    .contact-section p {
+      font-size: 20px;
+    }
+  
+    .contact-section a {
+      font-size: 18px;
+    }
+  
+    .contact-section a:hover {
+      background-color: rgb(194, 194, 194);
+      color: #171c28;
+    }
+  }

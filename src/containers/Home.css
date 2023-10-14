@@ -1,0 +1,220 @@
+.navbar {
+    padding: 1rem 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .navbar-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    height: 55px;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  
+  .say-hello {
+    margin-right: 1.3rem;
+    background-color: transparent;
+    padding: 0.6em 0.8em;
+    border: 2px solid #7510f7;
+    border-radius: 30px;
+    color: #7510f7;
+  
+    text-decoration: none;
+  }
+  
+  .say-hello:active {
+    background-color: #7510f7;
+    color: white;
+  }
+  
+  .intro {
+    height: 85vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .intro-text-div {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .intro-title-div {
+    margin-top: 80px;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .intro-title-div img {
+    height: 55px;
+    margin-left: 7px;
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    margin-bottom: 10px;
+  }
+  
+  .intro-text-div p {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .avatar {
+    height: 165px;
+    margin-top: 65px;
+  }
+  
+  .computers {
+    height: 150px;
+    margin-bottom: -5px;
+  }
+  
+  .purple-background {
+    height: auto;
+    background-color: #7510f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 80px;
+  }
+  
+  .about-me h2 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+  
+  .about-me p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .skills {
+    background-color: white;
+    width: 90%;
+    height: auto;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    color: black;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .frontend-img {
+    margin-top: 30px;
+    height: 60px;
+  }
+  
+  .skills h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 300;
+  }
+  
+  .skills-pictures-div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .skill-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .skill-div img {
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .skill-div label {
+    font-size: 18px;
+  }
+  
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .navbar-div {
+      width: 70%;
+      min-height: 5rem;
+    }
+  
+    .logo {
+      height: 65px;
+    }
+  
+    .say-hello {
+      padding: 0.7em 1em;
+      font-size: 1rem;
+    }
+    .say-hello:hover {
+      background-color: #7510f7;
+      color: white;
+      cursor: pointer;
+    }
+  }

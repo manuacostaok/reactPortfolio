@@ -1,0 +1,59 @@
+.navbar {
+    padding: 1rem 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .navbar-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    height: 55px;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  
+  .say-hello {
+    margin-right: 1.3rem;
+    background-color: transparent;
+    padding: 0.6em 0.8em;
+    border: 2px solid #171c28;
+    border-radius: 30px;
+    color: #171c28;
+  
+    text-decoration: none;
+  }
+  
+  .say-hello:active {
+    background-color: #171c28;
+    color: white;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .navbar-div {
+      width: 70%;
+      min-height: 5rem;
+    }
+  
+    .logo {
+      height: 70px;
+    }
+  
+    .say-hello {
+      padding: 0.7em 1em;
+      font-size: 1.1rem;
+    }
+    .say-hello:hover {
+      background-color: #171c28;
+      color: white;
+      cursor: pointer;
+    }
+  }
