@@ -1,109 +1,214 @@
-/* import inmobiliaria from "./pictures/inmobiliaria.jpeg"; */
-/* import construcciones from "./pictures/construcciones.jpeg";
-import journal from "./pictures/journal.jpeg";
-import heros from "./pictures/heros.jpeg";
-import giphy from "./pictures/giphy.jpeg"; */
+
 
 .projects-section {
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-  }
-  
-  .projects-text-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    margin-top: 60px;
-    width: 80%;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.projects-text-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 60px;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects-text-div h2 {
+  font-size: 28px;
+}
+
+.projects-text-div p {
+  font-size: 18px;
+  margin-top: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.project p {
+  opacity: 0;
+}
+
+.project-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.project-div span {
+  background-color: #fe4e5f;
+  height: 1px;
+  width: 90%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.click-to {
+  color: grey;
+  font-size: 13px;
+}
+
+.project {
+  width: 350px;
+  height: 180px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  margin-top: 5px;
+  background-color: #171c28;
+  color: white;
+  transition: all 300ms ease;
+}
+
+.project p {
+  opacity: 0;
+}
+
+.project-active {
+  background-color: #171c28;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 350px;
+  height: 180px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  margin-top: 5px;
+  transition: all 300ms ease;
+}
+
+.project-active p {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.8;
+  transition: all 300ms ease;
+}
+
+.visit-code {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.visit-code img {
+  height: 40px;
+  margin-top: 5px;
+}
+
+.inmobiliaria {
+  background-image: url(./pictures/fueraLuces.png);
+  background-size: cover;
+}
+
+.news {
+  background-image: url(./pictures/invasion.png);
+  background-size: cover;
+}
+
+.senderos {
+  background-image: url(./pictures/proyecto.png);
+  background-size: cover;
+}
+
+.journal {
+  background-image: url(./pictures/proyecto1.png);
+  background-size: cover;
+}
+
+.heros {
+  background-image: url(./pictures/proyecto2.png);
+  background-size: cover;
+}
+
+.giphy {
+  background-image: url(./pictures/giphy.jpeg);
+  background-size: cover;
+}
+
+@media screen and (min-width: 1024px) {
   .projects-text-div h2 {
-    font-size: 28px;
+    font-size: 30px;
   }
-  
-  .projects-text-div p {
-    font-size: 18px;
-    margin-top: 20px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  .projects {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .project p {
-    opacity: 0;
-  }
-  
-  .project-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-  
-  .project-div span {
-    background-color: #fe4e5f;
-    height: 1px;
-    width: 90%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  
+
   .click-to {
     color: grey;
-    font-size: 13px;
+    font-size: 15px;
   }
-  
+
+  .projects-text-div p {
+    font-size: 20px;
+  }
+
+  .projects {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 80%;
+    margin-top: 30px;
+  }
+
   .project {
-    width: 350px;
-    height: 180px;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
-    margin-top: 5px;
+    height: 200px;
+    width: 400px;
+    margin-right: 20px;
+    margin-left: 20px;
+    transition: all 300ms ease;
     background-color: #171c28;
     color: white;
+  }
+
+  .project-active {
+    height: 200px;
+    width: 400px;
+    margin-right: 20px;
+    margin-left: 20px;
     transition: all 300ms ease;
   }
-  
-  .project p {
-    opacity: 0;
+
+  .project-active:hover {
+    transform: scale(1.05);
   }
-  
-  .project-active {
-    background-color: #171c28;
-    color: white;
+
+  .project:hover {
+    background-image: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
-    width: 350px;
-    height: 180px;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
-    margin-top: 5px;
-    transition: all 300ms ease;
+    transform: scale(1.05);
   }
-  
-  .project-active p {
+
+  .project p {
+    opacity: 0;
     height: 100%;
     width: 90%;
     display: flex;
@@ -114,97 +219,16 @@ import giphy from "./pictures/giphy.jpeg"; */
     line-height: 1.8;
     transition: all 300ms ease;
   }
-  
+
+  .project:hover p {
+    opacity: 1;
+  }
+
   .visit-code {
-    display: flex;
-    width: 80%;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 10px;
+    transition: all 300ms ease;
   }
-  
-  .visit-code img {
-    height: 40px;
-    margin-top: 5px;
+
+  .visit-code img:hover {
+    transform: scale(1.1);
   }
-  
-  
-  
-  @media screen and (min-width: 1024px) {
-    .projects-text-div h2 {
-      font-size: 30px;
-    }
-  
-    .click-to {
-      color: grey;
-      font-size: 15px;
-    }
-  
-    .projects-text-div p {
-      font-size: 20px;
-    }
-  
-    .projects {
-      flex-wrap: wrap;
-      flex-direction: row;
-      width: 80%;
-      margin-top: 30px;
-    }
-  
-    .project {
-      height: 200px;
-      width: 400px;
-      margin-right: 20px;
-      margin-left: 20px;
-      transition: all 300ms ease;
-      background-color: #171c28;
-      color: white;
-    }
-  
-    .project-active {
-      height: 200px;
-      width: 400px;
-      margin-right: 20px;
-      margin-left: 20px;
-      transition: all 300ms ease;
-    }
-  
-    .project-active:hover {
-      transform: scale(1.05);
-    }
-  
-    .project:hover {
-      background-image: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      transform: scale(1.05);
-    }
-  
-    .project p {
-      opacity: 0;
-      height: 100%;
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      line-height: 1.8;
-      transition: all 300ms ease;
-    }
-  
-    .project:hover p {
-      opacity: 1;
-    }
-  
-    .visit-code {
-      transition: all 300ms ease;
-    }
-  
-    .visit-code img:hover {
-      transform: scale(1.1);
-    }
-  }
+}

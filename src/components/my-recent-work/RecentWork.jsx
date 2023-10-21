@@ -3,6 +3,8 @@ import visit from "./pictures/open.png";
 import github from "./pictures/github.png";
 import { useState } from "react";
 
+
+
 export const RecentWork = () => {
   const [isActiveInmo, setIsactiveInmo] = useState(false);
   const [isActiveConst, setIsactiveConst] = useState(false);
@@ -51,9 +53,11 @@ export const RecentWork = () => {
           <div
             className={
               !isActiveInmo ? "project inmobiliaria" : "project-active"
+              
             }
             onClick={toggleClassInmo}
           >
+            
             <p>
               This was created for the college with Java. <br /> 
                <br />The objective was train the developing in distincts caps, one for the logic, one for the design, and the last for the data. 
