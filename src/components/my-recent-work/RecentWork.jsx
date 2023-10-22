@@ -72,7 +72,7 @@ export const RecentWork = () => {
               <img src={visit} />
             </a>
             <a
-              href="https://github.com/renatopiermarini/inmobiliaria-react/tree/main"
+              href="https://github.com/manuacostaok/FueraLuces"
               target="_blank"
             >
               <img src={github} />
@@ -80,7 +80,7 @@ export const RecentWork = () => {
           </div>
         </div>
         <div className="project-div">
-          <label>Construction Company Website</label>
+          <label>Clima App</label>
           <span />
 
           <div
@@ -88,22 +88,20 @@ export const RecentWork = () => {
             onClick={toggleClassConst}
           >
             <p>
-              This was created for a client, he wanted a simple website with a
-              contact form. <br /> The client is taking pictures so I can finish
-              it and send it to production. <br />
-              Made with Javascript.
+              This was created for my portfolio, the app is one of the common on the work of the developers. <br />  <br />
+              Its simple page 
             </p>
           </div>
 
           <div className="visit-code">
             <a
-              href="https://renatopiermarini.github.io/senderos-construcciones/"
+              href="https://appclima-e3491.web.app"
               target="_blank"
             >
               <img src={visit} />
             </a>
             <a
-              href="https://github.com/renatopiermarini/senderos-construcciones/tree/main"
+              href="https://github.com/manuacostaok/AppClima"
               target="_blank"
             >
               <img src={github} />
@@ -111,15 +109,14 @@ export const RecentWork = () => {
           </div>
         </div>
         <div className="project-div">
-          <label>News App</label>
+          <label>UNGS War</label>
           <span />
           <div
             className={!isActiveNews ? "project news" : "project-active"}
             onClick={toggleClassNews}
           >
             <p>
-              This is a website I made with a public news api. It gives you the
-              latest news from different sources just by typing a word.
+              This is a practice work for my college, we have to do a game, the objective was devolping in distincts layers, one for the logic, one for the data, and other for the design.
             </p>
           </div>
 
@@ -136,7 +133,7 @@ export const RecentWork = () => {
           </div>
         </div>
         <div className="project-div">
-          <label>Journal App</label>
+          <label>Encriptador de msj</label>
           <span />
 
           <div
@@ -144,8 +141,8 @@ export const RecentWork = () => {
             onClick={toggleClassJournal}
           >
             <p>
-              This is a Journal App. It has Firebase Authentication and Redux.
-              It's made to keep private notes.
+              This was created for my portfolio, the app is one of the common on the work of the developers. <br />  <br />
+              Its simple page 
             </p>
           </div>
 
@@ -162,7 +159,7 @@ export const RecentWork = () => {
           </div>
         </div>
         <div className="project-div">
-          <label>Hero App</label>
+          <label>Traductor App</label>
           <span />
 
           <div
@@ -185,28 +182,27 @@ export const RecentWork = () => {
           </div>
         </div>
         <div className="project-div">
-          <label>Giphy Expert App</label>
+          <label>Arg Programa Portofolio App</label>
           <span />
 
           <div
             className={!isActiveGiphy ? "project giphy" : "project-active"}
             onClick={toggleClassGiphy}
           >
-            <p>
-              This was one of my first projects. I was learning how to work with
-              APIS. It's really simple but still a fun work to share.
+           <p>
+              This is the statal project "Argentina Programa", its a full stack app with Login (without register), developed with Angular, NodeJS, Typescript, Java for the backend.
             </p>
           </div>
 
           <div className="visit-code">
             <a
-              href="https://renatopiermarini.github.io/gif-expert-app/"
+              href="https://github.com/manuacostaok/FrontEnd-YoProgramo"
               target="_blank"
             >
               <img src={visit} />
             </a>
             <a
-              href="https://github.com/renatopiermarini/gif-expert-app"
+              href="https://portfoliomanuacosta.web.app"
               target="_blank"
             >
               <img src={github} />
