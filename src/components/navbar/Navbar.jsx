@@ -2,7 +2,7 @@ import "./navbar.css";
 import logo from "../pictures/logo.jpeg";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import DarkMode from "../theme/DarkMode";
 
 
 export const Navbar = () => {
@@ -23,8 +23,13 @@ export const Navbar = () => {
         ) : (
           <NavLink className="say-hello" to="/">
             Home
+            
           </NavLink>
         )}
+      </div>
+        <DarkMode />
+      <div>
+        
       </div>
     </nav>
   );

@@ -14,9 +14,12 @@ import java from "../pictures/skills/java.png";
 import ruby from "../pictures/skills/ruby.png";
 import curriculum from "./cvManAcosta2023.pdf";
 
+
+
 export const AboutMeSkills = () => {
   return (
     <section className="purple-background">
+      
       <div className="about-me">
         <h2>About me</h2>
         <p>

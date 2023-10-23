@@ -1,3 +1,14 @@
+:root{
+  --body_background: white;
+  --body_color: black;
+  --link_color: navy;
+}
+
+[data-theme="dark"]{
+  --body_background: #232c34;
+  --body_color: white;
+  --link_color: cyan;
+}
 .navbar {
     padding: 1rem 0;
     background-color: rgb(255, 255, 255);

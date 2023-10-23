@@ -5,9 +5,14 @@
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
     "create-react-app": "^1.2.1",
+    "eslint-config-react-app": "^7.0.1",
+    "it": "^1.1.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.17.0",
+    "react-scripts": "^5.0.1",
+    "styled-component": "^2.8.0",
+    "styled-components": "^6.1.0",
     "sweetalert": "^2.1.2"
   },
   "scripts": {
