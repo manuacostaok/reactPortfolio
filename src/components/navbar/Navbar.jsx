@@ -14,7 +14,7 @@ export const Navbar = () => {
     <nav className="navbar" id="top">
       <div className="navbar-div">
         <NavLink to="/">
-          <img src={logo} className="logo" />
+          <img src={logo} className="logo"  alt="" />
         </NavLink>
         {location.pathname === "/" ? (
           <a className="say-hello" href="#contact">
@@ -27,7 +27,7 @@ export const Navbar = () => {
           </NavLink>
         )}
       </div>
-        <DarkMode />
+        
       <div>
         
       </div>
