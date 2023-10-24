@@ -9,6 +9,8 @@
   --body_color: white;
   --link_color: cyan;
 }
+
+
 .navbar {
     padding: 1rem 0;
     background-color: rgb(255, 255, 255);

@@ -11,8 +11,8 @@ export const Intro = () => {
           <img src={wave} />
         </div>
         <p>
-          I'm a passionate Full Stack Developer but im love Front-end Developing and coding beautifully
-          simple visual things.
+          I'm a passionate Full Stack Developer but i love Front-end Developing and coding beautifully
+          simple things.
         </p>
       </div>
       <div className="intro-img-div">

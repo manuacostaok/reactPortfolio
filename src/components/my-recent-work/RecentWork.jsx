@@ -66,16 +66,16 @@ export const RecentWork = () => {
 
           <div className="visit-code">
             <a
-              href="https://www.inmobiliariamarinatortarolo.com/"
-              target="_blank"
+              href="https://github.com/manuacostaok/FueraLuces"
+              target="_blank" rel="noreferrer"
             >
-              <img src={visit} />
+              <img src={visit} alt="" />
             </a>
             <a
               href="https://github.com/manuacostaok/FueraLuces"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
-              <img src={github} />
+              <img src={github} alt="" />
             </a>
           </div>
         </div>
@@ -96,15 +96,15 @@ export const RecentWork = () => {
           <div className="visit-code">
             <a
               href="https://appclima-e3491.web.app"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
-              <img src={visit} />
+              <img src={visit} alt="" />
             </a>
             <a
               href="https://github.com/manuacostaok/AppClima"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
-              <img src={github} />
+              <img src={github}alt="" />
             </a>
           </div>
         </div>
@@ -121,14 +121,14 @@ export const RecentWork = () => {
           </div>
 
           <div className="visit-code">
-            <a href="https://news-app-flax.vercel.app/" target="_blank">
-              <img src={visit} />
+            <a href="https://github.com/manuacostaok/Programacion/tree/main/TP%20ultima%20v%20Programacio%202/TP%20ultima%20version02/Prueba%20del%20entorno" target="_blank" rel="noreferrer">
+              <img src={visit}alt="" />
             </a>
             <a
-              href="https://github.com/renatopiermarini/news-app"
-              target="_blank"
+              href="https://github.com/manuacostaok/Programacion/tree/main/TP%20ultima%20v%20Programacio%202/TP%20ultima%20version02/Prueba%20del%20entorno"
+              target="_blank" rel="noreferrer"
             >
-              <img src={github} />
+              <img src={github}alt="" />
             </a>
           </div>
         </div>
@@ -147,14 +147,14 @@ export const RecentWork = () => {
           </div>
 
           <div className="visit-code">
-            <a href="https://react-journal-app-six.vercel.app" target="_blank">
-              <img src={visit} />
+            <a href="https://appencriptador-e09a9.web.app" target="_blank" rel="noreferrer">
+              <img src={visit}alt="" />
             </a>
             <a
-              href="https://github.com/renatopiermarini/react-journal-app"
-              target="_blank"
+              href="https://github.com/manuacostaok/EncriptadorTexto"
+              target="_blank" rel="noreferrer"
             >
-              <img src={github} />
+              <img src={github}alt="" />
             </a>
           </div>
         </div>
@@ -170,14 +170,14 @@ export const RecentWork = () => {
           </div>
 
           <div className="visit-code">
-            <a href="https://react-hero-app.vercel.app/" target="_blank">
-              <img src={visit} />
+            <a href="https://apptraductor-9928e.web.app" target="_blank" rel="noreferrer">
+              <img src={visit}alt="" />
             </a>
             <a
-              href="https://github.com/renatopiermarini/react-hero-app"
-              target="_blank"
+              href="https://github.com/manuacostaok/Traductor"
+              target="_blank" rel="noreferrer"
             >
-              <img src={github} />
+              <img src={github} alt="" />
             </a>
           </div>
         </div>
@@ -196,16 +196,16 @@ export const RecentWork = () => {
 
           <div className="visit-code">
             <a
-              href="https://github.com/manuacostaok/FrontEnd-YoProgramo"
-              target="_blank"
+              href="https://portfoliomanuacosta.web.app"
+              target="_blank" rel="noreferrer"
             >
-              <img src={visit} />
+              <img src={visit}alt="" />
             </a>
             <a
-              href="https://portfoliomanuacosta.web.app"
-              target="_blank"
+              href="https://github.com/manuacostaok/FrontEnd-YoProgramo"
+              target="_blank" rel="noreferrer"
             >
-              <img src={github} />
+              <img src={github}alt="" />
             </a>
           </div>
         </div>
