@@ -23,12 +23,11 @@ export const AboutMeSkills = () => {
       <div className="about-me">
         <h2>About me</h2>
         <p>
-          I'm a 27 years old Full Stack Developer from Argentina, i love Front-end developing, but im a proactive person so i can do everything that i propose.
-          I started my journey in 2018 in my college "UNGS" on my City, San Miguel, where I learned
-          everything about OOP, then i decided to learn programming Web Developing on courses of Google on my free time for later do the statal project "Arg Programa" that help me to apply these knowledge on a App project but like a personal portfolio, that was there where i fall in love doing the front end. 
-          In a fact i decided to dedicate my life to bringing ideas to life in the browser. I'm
-          confident, naturally curious, and perpetually working on improving my
-          coding skills one problem at a time with peace and love.
+        I'm a 28-year-old Full Stack Developer from Argentina. I love Front-end development, but I'm a proactive person, so I can do anything I set my mind to.
+
+I started my journey in 2018 at my college, UNGS, in my city, San Miguel, where I learned everything about OOP. Then, I decided to learn web development through Google courses in my free time. Later, I participated in the state project "Arg Programa," which helped me apply this knowledge to an app project that served as my personal portfolio. It was there that I fell in love with front-end development.
+Recently, I developed an Android application that registers entries and exits with facial recognition as part of completing my career as a Systems Technician.
+In fact, I decided to dedicate my life to bringing ideas to life in the browser. I'm confident, naturally curious, and always working on improving my coding skills one problem at a time, with peace and love.
         </p>
       </div>
       <div className="skills">
@@ -42,14 +41,13 @@ export const AboutMeSkills = () => {
             <img src={css} />
             <label>Css3</label>
           </div>
-          
-          <div className="skill-div">
-          <img src={angular} />
-            <label>Angular</label>
-          </div>
           <div className="skill-div">
             <img src={javascript} />
             <label>JavaScript</label>
+          </div>
+          <div className="skill-div">
+          <img src={angular} />
+            <label>Angular</label>
           </div>
           <div className="skill-div">
             <img src={java} />
@@ -64,8 +62,13 @@ export const AboutMeSkills = () => {
             <label>Git</label>
           </div>
           <div className="skill-div">
-          <img src={docker} />
-            <label>Docker</label>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin" />
+            <label>Kotlin</label>
+          </div>
+          <div className="skill-div">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" />
+          <label>Python</label>
+
           </div>
           <div className="skill-div">
             <img src={firebase} />
@@ -83,10 +86,8 @@ export const AboutMeSkills = () => {
             <img src={psql} />
             <label>PSQL</label>
           </div>
-          <div className="skill-div">
-            <img src={ruby} />
-            <label>Ruby</label>
-          </div>
+
+          
           
         </div>
       </div>

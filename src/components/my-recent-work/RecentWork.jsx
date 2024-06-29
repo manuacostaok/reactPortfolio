@@ -12,6 +12,8 @@ export const RecentWork = () => {
   const [isActiveHeros, setIsactiveHeros] = useState(false);
   const [isActiveGiphy, setIsactiveGiphy] = useState(false);
   const [isActiveNews, setIsactiveNews] = useState(false);
+  const [isActiveLoger, setIsactiveLoger] = useState(false);
+  const [isActiveChatbot, setIsactiveChatbot] = useState(false);
 
   const toggleClassInmo = () => {
     setIsactiveInmo(!isActiveInmo);
@@ -35,6 +37,14 @@ export const RecentWork = () => {
 
   const toggleClassGiphy = () => {
     setIsactiveGiphy(!isActiveGiphy);
+  };
+
+  const toggleClassLoger = () => {
+    setIsactiveLoger(!isActiveLoger);
+  };
+
+  const toggleClassChatbot = () => {
+    setIsactiveChatbot(!isActiveChatbot);
   };
 
   return (
@@ -203,6 +213,61 @@ export const RecentWork = () => {
             </a>
             <a
               href="https://github.com/manuacostaok/FrontEnd-YoProgramo"
+              target="_blank" rel="noreferrer"
+            >
+              <img src={github}alt="" />
+            </a>
+          </div>
+        </div>
+        <div className="project-div">
+          <label>Loger App (Face Recognition)</label>
+          <span />
+
+          <div
+            className={!isActiveGiphy ? "project loger" : "project-active"}
+            onClick={toggleClassLoger}
+          >
+           <p>
+           This is a university project to complete the Systems Technician program. It is an Android application that registers entries and exits to establishments using facial recognition.  (in the video you can see the demo)          </p>
+          
+          </div>
+
+          <div className="visit-code">
+            <a
+              href="https://www.youtube.com/watch?v=-kkBO2pkZYM"
+              target="_blank" rel="noreferrer"
+            >
+              <img src={visit}alt="" />
+            </a>
+            <a
+              href="https://github.com/manuacostaok/LogerFaceRecognition"
+              target="_blank" rel="noreferrer"
+            >
+              <img src={github}alt="" />
+            </a>
+          </div>
+        </div>
+        <div className="project-div">
+          <label>Fingerprint Reader Chat Bot</label>
+          <span />
+
+          <div
+            className={!isActiveChatbot ? "project chatbot" : "project-active"}
+            onClick={toggleClassChatbot}
+          >
+           <p>
+           It's a help desk application, a web API service with a chatbot for services, which also includes a fingerprint reader.</p>
+          </div>
+
+          <div className="visit-code">
+            <a
+              href="https://github.com/manuacostaok/chatbot"
+              target="_blank" rel="noreferrer"
+            >
+              <img src={visit}alt="" />
+            </a>
+            <a
+              href="https://github.com/manuacostaok/chatbot"
               target="_blank" rel="noreferrer"
             >
               <img src={github}alt="" />

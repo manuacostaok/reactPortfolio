@@ -154,6 +154,15 @@
   background-size: cover;
 }
 
+.loger {
+  background-image: url(./pictures/loger.png);
+  background-size: cover;
+}
+.chatbot {
+  background-image: url(./pictures/chatbot.png);
+  background-size: cover;
+}
+
 @media screen and (min-width: 1024px) {
   .projects-text-div h2 {
     font-size: 30px;
