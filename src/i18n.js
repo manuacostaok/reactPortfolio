@@ -44,7 +44,8 @@ i18n
                 firebase: 'Firebase',
                 npm: 'Npm',
                 phpmysql: 'Php/MySQL',
-                psql: 'PSQL'
+                psql: 'PSQL',
+                mongodb: 'MongoDB'
               },
               contact: {
                 title: 'Send me an email',
@@ -98,7 +99,7 @@ i18n
           aboutMe: {
             title: 'Sobre mí',
             description: 'Soy un desarrollador Full Stack de 28 años de Argentina. Me encanta el desarrollo de software, soy una persona proactiva, así que puedo hacer cualquier cosa que me proponga. Comencé mi viaje en 2018 en mi universidad, UNGS, en mi ciudad, San Miguel, donde aprendí todo sobre POO. Luego, en mi tiempo libre, decidí aprender desarrollo web a través de cursos web como Google; Udemy; Coderhouse; Youtueb; etc. Más tarde, participé en el proyecto estatal "Arg Programa," que me ayudó a aplicar este conocimiento a un proyecto del tipo Full Stack que sirvió como mi portafolio personal durante un tiempo. Fue allí donde me enamoré del desarrollo front-end y decidí realizar éste portfolio mas simple con React. Recientemente, desarrollé una aplicación Android que registra entradas y salidas con reconocimiento facial como parte de completar mi carrera como Técnico en Sistemas. En consecuencia, decidí dedicar mi vida a dar vida a las ideas en sistemas. Soy confiado, naturalmente curioso y siempre trabajo en mejorar mis habilidades profesionales',
-            downloadCV: 'Download CV'
+            downloadCV: 'Descargar CV'
           },
           skills: {
             title: 'Habilidades',
@@ -114,7 +115,8 @@ i18n
             firebase: 'Firebase',
             npm: 'Npm',
             phpmysql: 'Php/MySQL',
-            psql: 'PSQL'
+            psql: 'PSQL',
+            mongodb: 'MongoDB'
           },
           contact: {
             description: 'Siéntete libre de enviarme un mensaje, siempre estoy abierto a nuevas ideas.',

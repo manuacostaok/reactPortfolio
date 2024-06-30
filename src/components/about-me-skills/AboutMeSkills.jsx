@@ -13,9 +13,10 @@ import git from '../pictures/skills/git.png';
 import firebase from '../pictures/skills/firebase.png';
 import npm from '../pictures/skills/npm.png';
 import java from '../pictures/skills/java.png';
-import ruby from '../pictures/skills/ruby.png';
+import mongodb from '../pictures/skills/mongodb.png';
 import curriculum from './cvManAcosta2023.pdf';
 import { useTranslation } from 'react-i18next';
+
 
 export const AboutMeSkills = () => {
   const { t } = useTranslation();
@@ -74,13 +75,14 @@ export const AboutMeSkills = () => {
             <label>{t('skills.npm')}</label>
           </div>
           <div className="skill-div">
-            <img src={phpmysql} alt="Php/MySQL" />
-            <label>{t('skills.phpmysql')}</label>
-          </div>
-          <div className="skill-div">
             <img src={psql} alt="PSQL" />
             <label>{t('skills.psql')}</label>
           </div>
+          <div className="skill-div">
+            <img src={mongodb} alt="mongodb" />
+            <label>{t('skills.mongodb')}</label>
+          </div>
+
         </div>
       </div>
       <a className="download-cv" target="_blank" rel="noopener noreferrer" href={curriculum}>
