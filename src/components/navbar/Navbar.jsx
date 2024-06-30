@@ -3,11 +3,13 @@ import logo from "../pictures/logo.jpeg";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import DarkMode from "../theme/DarkMode";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../../components/switch-language/LanguageSwitcher';
 
 
 export const Navbar = () => {
 
-  
+  const { t } = useTranslation();
   const location = useLocation();
 
   return (
@@ -16,21 +18,22 @@ export const Navbar = () => {
         <NavLink to="/">
           <img src={logo} className="logo"  alt="" />
         </NavLink>
-        {location.pathname === "/" ? (
+        
+      </div>
+        
+      
+      {location.pathname === "/" ? (
           <a className="say-hello" href="#contact">
-            Contact
-          </a>
+          {t('navbar.contact')}
+        </a>
         ) : (
           <NavLink className="say-hello" to="/">
-            Home
+            {t('navbar.home')}
             
           </NavLink>
         )}
-      </div>
         
-      <div>
-        
-      </div>
+      
     </nav>
   );
 };

@@ -38,7 +38,9 @@ export const ContactPage = () => {
     <>
       <Navbar />
       <section className="contact-page-section">
+      
         <div className="form-div">
+        
           <h2>
             I’m excited to learn about your project. Complete the form and I
             will contact you as soon as posible.
