@@ -13,8 +13,12 @@ import git from '../pictures/skills/git.png';
 import firebase from '../pictures/skills/firebase.png';
 import npm from '../pictures/skills/npm.png';
 import java from '../pictures/skills/java.png';
+import Jira from '../pictures/skills/jira.png';
+import Postman from '../pictures/skills/postman.png';
+import Selenium from '../pictures/skills/Selenium.png';
+import Junit from '../pictures/skills/junit.png';
 import mongodb from '../pictures/skills/mongodb.png';
-import curriculum from './cv24.pdf';
+import curriculum from './Cv24.pdf';
 import { useTranslation } from 'react-i18next';
 
 
@@ -87,10 +91,25 @@ export const AboutMeSkills = () => {
             <label>{t('Ruby')}</label>
           </div>
           <div className="skill-div">
-            <img src={phpmysql} alt="Npm" />
+            <img src={phpmysql} alt="phpmysql" />
             <label>{t('skills.phpmysql')}</label>
           </div>
-
+          <div className="skill-div">
+            <img src={Jira} alt="Jira" />
+            <label>{t('Jira')}</label>
+          </div>
+          <div className="skill-div">
+            <img src={Selenium} alt="Selenium" />
+            <label>{t('Selenium')}</label>
+          </div>
+          <div className="skill-div">
+            <img src={Junit} alt="Junit" />
+            <label>{t('Junit')}</label>
+          </div>
+          <div className="skill-div">
+            <img src={Postman} alt="Postman" />
+            <label>{t('Postman')}</label>
+          </div>
         </div>
       </div>
       <a className="download-cv" target="_blank" rel="noopener noreferrer" href={curriculum}>
