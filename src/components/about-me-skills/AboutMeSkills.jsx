@@ -6,7 +6,7 @@ import css from '../pictures/skills/css.png';
 import javascript from '../pictures/skills/javascript.png';
 import reactjs from '../pictures/skills/reactjs.png';
 import angular from '../pictures/skills/angular.png';
-import docker from '../pictures/skills/docker.png';
+import ruby from '../pictures/skills/ruby.png';
 import phpmysql from '../pictures/skills/phpmysql.png';
 import psql from '../pictures/skills/psql.png';
 import git from '../pictures/skills/git.png';
@@ -81,6 +81,14 @@ export const AboutMeSkills = () => {
           <div className="skill-div">
             <img src={mongodb} alt="mongodb" />
             <label>{t('skills.mongodb')}</label>
+          </div>
+          <div className="skill-div">
+            <img src={ruby} alt="Ruby" />
+            <label>{t('Ruby')}</label>
+          </div>
+          <div className="skill-div">
+            <img src={phpmysql} alt="Npm" />
+            <label>{t('skills.phpmysql')}</label>
           </div>
 
         </div>
