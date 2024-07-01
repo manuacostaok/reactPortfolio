@@ -14,7 +14,7 @@ import firebase from '../pictures/skills/firebase.png';
 import npm from '../pictures/skills/npm.png';
 import java from '../pictures/skills/java.png';
 import mongodb from '../pictures/skills/mongodb.png';
-import curriculum from './cvManAcosta2023.pdf';
+import curriculum from './cv24.pdf';
 import { useTranslation } from 'react-i18next';
 
 
