@@ -18,13 +18,16 @@ import Postman from '../pictures/skills/postman.png';
 import Selenium from '../pictures/skills/Selenium.png';
 import Junit from '../pictures/skills/junit.png';
 import mongodb from '../pictures/skills/mongodb.png';
-import curriculum from './Cv24.pdf';
+import curriculumEn from './Cv24_en.pdf'; // Currículum en inglés
+import curriculumEs from './Cv24_es.pdf'; // Currículum en español
 import { useTranslation } from 'react-i18next';
 
 
 export const AboutMeSkills = () => {
-  const { t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+  // Determinar el archivo de currículum basado en el idioma actual
+  const curriculumFile = i18n.language === 'en' ? curriculumEn : curriculumEs;
+ 
   return (
     <section className="purple-background">
       <div className="about-me">
@@ -112,7 +115,7 @@ export const AboutMeSkills = () => {
           </div>
         </div>
       </div>
-      <a className="download-cv" target="_blank" rel="noopener noreferrer" href={curriculum}>
+      <a className="download-cv" target="_blank" rel="noopener noreferrer" href={curriculumFile}>
         {t('aboutMe.downloadCV')}
       </a>
     </section>
