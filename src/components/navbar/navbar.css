@@ -1,59 +1,195 @@
 .navbar {
-    padding: 1rem 0;
-    background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 40px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+}
+
+/* =========================
+   SHRINK ON SCROLL
+========================= */
+
+.navbar.shrink {
+  padding: 14px 40px;
+  background: rgba(15, 15, 16, 0.55);
+  backdrop-filter: blur(20px);
+}
+
+/* =========================
+   LOGO 3D
+========================= */
+
+.logo {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, text-shadow 0.3s ease;
+   will-change: transform;
+}
+
+/* glow base */
+.logo.glow {
+  text-shadow:
+    0 0 10px rgba(99, 102, 241, 0.5),
+    0 0 25px rgba(99, 102, 241, 0.25);
+}
+
+.logo-wrap {
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.6;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+  opacity: 1;
+  color: var(--primary);
+}
+
+/* underline animado */
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--primary);
+  border-radius: 999px;
+}
+
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 10px;
+
+  background: transparent;
+  border: 1px solid var(--border);
+
+  color: var(--text);
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  border: 1px solid var(--border);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LIGHT MODE FIX
+========================= */
+
+.light .navbar {
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid var(--border);
+}
+
+.light .nav-links a {
+  color: var(--text);
+}
+
+.light .logo {
+  color: var(--text);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
   }
-  
-  .navbar-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  .nav-links {
+    gap: 18px;
   }
-  
-  .logo {
-    height: 55px;
-    margin-left: 1rem;
-    cursor: pointer;
+
+  .nav-links a {
+    font-size: 13px;
   }
-  
-  .say-hello {
-    margin-right: 1.3rem;
-    background-color: transparent;
-    padding: 0.6em 0.8em;
-    border: 2px solid #171c28;
-    border-radius: 30px;
-    color: #171c28;
-  
-    text-decoration: none;
-  }
-  
-  .say-hello:active {
-    background-color: #171c28;
-    color: white;
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .navbar-div {
-      width: 70%;
-      min-height: 5rem;
-    }
-  
-    .logo {
-      height: 70px;
-    }
-  
-    .say-hello {
-      padding: 0.7em 1em;
-      font-size: 1.1rem;
-    }
-    .say-hello:hover {
-      background-color: #171c28;
-      color: white;
-      cursor: pointer;
-    }
-  }
+}

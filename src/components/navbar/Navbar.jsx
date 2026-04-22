@@ -1,39 +1,116 @@
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import "./navbar.css";
-import logo from "../pictures/logo.jpeg";
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import DarkMode from "../theme/DarkMode";
-import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from '../../components/switch-language/LanguageSwitcher';
+import { FiSun, FiMoon, FiGlobe } from "react-icons/fi";
 
+export const Navbar = ({
+  toggleTheme,
+  theme,
+  lang = "es",
+  toggleLang
+}) => {
+  const safeLang = lang || "es";
 
-export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
 
-  const { t } = useTranslation();
-  const location = useLocation();
+  // LOGO 3D REF
+  const logoRef = useRef(null);
+
+  // SCROLL EFFECT + ACTIVE SECTION
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = ["home", "projects", "contact"];
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+
+        if (rect.top <= 120 && rect.bottom >= 120) {
+          setActive(id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // =========================
+  // LOGO 3D TILT
+  // =========================
+  const handleLogoMove = (e) => {
+    const el = logoRef.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / 10) * -1;
+    const rotateY = (x - centerX) / 10;
+
+    el.style.transform = `
+      perspective(600px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.08)
+    `;
+  };
+
+  const resetLogo = () => {
+    const el = logoRef.current;
+    if (!el) return;
+
+    el.style.transform = `
+      perspective(600px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `;
+  };
 
   return (
-    <nav className="navbar" id="top">
-      <div className="navbar-div">
-        <NavLink to="/">
-          <img src={logo} className="logo"  alt="" />
-        </NavLink>
-        
+    <motion.nav
+      className={`navbar ${scrolled ? "shrink" : ""}`}
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+
+      {/* LOGO 3D */}
+      <div
+        ref={logoRef}
+        className="logo glow"
+        onMouseMove={handleLogoMove}
+        onMouseLeave={resetLogo}
+      >
+        MA
       </div>
-        
-      
-      {location.pathname === "/" ? (
-          <a className="say-hello" href="#contact">
-          {t('navbar.contact')}
+
+      {/* LINKS */}
+      <div className="nav-links">
+        <a className={active === "home" ? "active" : ""} href="#home">
+          Home
         </a>
-        ) : (
-          <NavLink className="say-hello" to="/">
-            {t('navbar.home')}
-            
-          </NavLink>
-        )}
-        
+        <a className={active === "projects" ? "active" : ""} href="#projects">
+          Projects
+        </a>
+        <a className={active === "contact" ? "active" : ""} href="#contact">
+          Contact
+        </a>
+      </div>
+
       
-    </nav>
+
+    </motion.nav>
   );
 };

@@ -1,122 +1,152 @@
-.contact-page-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.contact-page {
+  display: flex;
+  justify-content: center;
+  padding: 120px 20px;
+}
+
+/* MAIN LAYOUT */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* LEFT SIDE */
+.contact-info h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: var(--muted);
+  max-width: 420px;
+}
+
+/* SOCIAL BUTTONS */
+.contact-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  border: 1px solid var(--border);
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.2s;
+  opacity: 0.85;
+}
+
+.social-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+/* FORM */
+.contact-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INPUTS */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--text);
+  outline: none;
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+/* FOCUS */
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--primary);
+}
+
+/* BUTTON */
+.submit-btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+
+  background: var(--primary);
+  color: white;
+
+  font-weight: 500;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* SPINNER */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .avatar-div img {
-    height: 90px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .contact-container {
+    grid-template-columns: 1fr;
   }
-  
-  .form-div {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .form-div h2 {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 20px;
-    width: 80%;
-    line-height: 1.5;
-  }
-  
-  .form-project-contact {
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 50px;
-  }
-  
-  .form-project-contact button {
-    padding: 0.6rem;
-    width: 60%;
-    margin-top: 40px;
-    background-color: white;
-    border: 2px solid #171c28;
-    color: #171c28;
-    border-radius: 50px;
-    font-size: 17px;
-  }
-  
-  .form-project-contact button:disabled {
-    cursor: not-allowed;
-  }
-  
-  .form-project-contact button:active {
-    background-color: #171c28;
-    border: 2px solid white;
-    color: white;
-  }
-  
-  .contact-page-input-div {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    width: 80%;
-  }
-  
-  .contact-page-input-div label {
-    margin-bottom: 10px;
-    font-size: 17px;
-    color: rgb(146, 145, 145);
-  }
-  
-  .contact-page-input-div input {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid rgb(158, 158, 158);
-  }
-  
-  .contact-page-input-div textarea {
-    padding: 1rem;
-    height: 100px;
-    border-radius: 5px;
-    border: 1px solid rgb(158, 158, 158);
-    resize: none;
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .form-div h2 {
-      font-size: 30px;
-    }
-  
-    .form-div {
-      width: 30%;
-    }
-  
-    .form-project-contact {
-      width: 100%;
-    }
-  
-    .contact-page-input-div {
-      margin-top: 30px;
-    }
-  
-    .contact-page-input-div label {
-      font-size: 19px;
-    }
-  
-    .contact-page-input-div input {
-      padding: 0.8rem;
-    }
-    .contact-page-input-div textarea {
-      height: 130px;
-      margin-bottom: 20px;
-    }
-  
-    .form-project-contact button {
-      font-size: 19px;
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-  
-    .form-project-contact button:hover {
-      background-color: #171c28;
-      color: white;
-    }
-  }
+}

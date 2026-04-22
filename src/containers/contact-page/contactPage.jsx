@@ -1,9 +1,9 @@
 import { useState } from "react";
 import swal from "sweetalert";
-import { Navbar } from "../../components/navbar/Navbar";
-
-import "./contact-page.css";
 import emailjs from "@emailjs/browser";
+import { Navbar } from "../../components/navbar/Navbar";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import "./contact-page.css";
 
 export const ContactPage = () => {
   const [loading, setLoading] = useState(false);
@@ -11,6 +11,7 @@ export const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+
     emailjs
       .sendForm(
         "service_3vxmpzu",
@@ -18,51 +19,108 @@ export const ContactPage = () => {
         e.target,
         "nyYBn4MtO8T9aj2Uz"
       )
-      .then((res) => {
+      .then(() => {
         swal({
-          text: "Consulta enviada correctamente",
+          text: "Message sent successfully 🚀",
           icon: "success",
+          timer: 2000,
         });
+
         setLoading(false);
+        e.target.reset();
       })
-      .catch((err) =>
+      .catch(() => {
         swal({
-          text: "Ha ocurrido un error",
-          icon: "warning",
-          timer: "2000",
-        })
-      );
+          text: "Something went wrong",
+          icon: "error",
+        });
+
+        setLoading(false);
+      });
   };
 
   return (
     <>
-      <Navbar />
-      <section className="contact-page-section">
       
-        <div className="form-div">
-        
-          <h2>
-            I’m excited to learn about your project. Complete the form and I
-            will contact you as soon as posible.
-          </h2>
-          <form className="form-project-contact" onSubmit={handleSubmit}>
-            <div className="contact-page-input-div">
+
+      <section className="contact-page">
+
+        <div className="contact-container">
+
+          {/* LEFT INFO */}
+          <div className="contact-info">
+
+            <h2>Let’s build something together</h2>
+
+            <p>
+              I’m open to freelance work, collaborations or full-time roles.
+              Send me a message and I’ll reply as soon as possible.
+            </p>
+
+            {/* SOCIAL BUTTONS */}
+            <div className="contact-socials">
+
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-btn"
+              >
+                <FaGithub size={18} />
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-btn"
+              >
+                <FaLinkedin size={18} />
+                <span>LinkedIn</span>
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* FORM */}
+          <form className="contact-form" onSubmit={handleSubmit}>
+
+            <div className="input-group">
               <label>Name</label>
-              <input type="text" autoComplete="off" name="name" />
+              <input type="text" name="name" required />
             </div>
-            <div className="contact-page-input-div">
+
+            <div className="input-group">
               <label>Email</label>
-              <input type="email" autoComplete="none" name="email" />
+              <input type="email" name="email" required />
             </div>
-            <div className="contact-page-input-div">
-              <label>Additional details</label>
-              <textarea name="message" />
+
+            <div className="input-group">
+              <label>Message</label>
+              <textarea name="message" rows="6" required />
             </div>
-            <button type="submit" disabled={loading}>
-              Submit
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="submit-btn"
+            >
+              {loading ? (
+                <>
+                  <span className="spinner"></span>
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
+
           </form>
+
         </div>
+
       </section>
     </>
   );
