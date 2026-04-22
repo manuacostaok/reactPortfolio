@@ -5,24 +5,32 @@ import {
   FaNodeJs,
   FaDatabase,
   FaAndroid,
-  FaJava
+  FaBrain,
+  FaCss3Alt,
+  FaJava,
+  FaPython,
+  FaHtml5,
+  FaJs,
+  FaBootstrap
 } from "react-icons/fa";
 
 import {
   SiExpress,
-  SiJavascript, SiOpencv, SiTensorflow
+  SiOpencv,
+  SiTensorflow,
+  SiDjango,
+  SiScikitlearn
 } from "react-icons/si";
+
 export const RecentWork = () => {
   return (
     <section id="projects">
-
       <h2>Featured Projects</h2>
 
       <div className="projects-grid">
 
         {/* TASK MANAGER */}
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
-
           <div className="project-content">
 
             <h3>Task Manager App</h3>
@@ -51,113 +59,128 @@ export const RecentWork = () => {
               View Project
             </a>
           </div>
-
         </motion.div>
 
         {/* LOGGER */}
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
-
           <div className="project-content">
 
-  <h3>Logger Face Recognition</h3>
+            <h3>Logger Face Recognition System</h3>
 
-  <p>
-    Full-stack attendance system using facial recognition for real-world environments.
-    Android mobile app integrated with backend API and AI-based image processing pipeline.
-  </p>
+            <p>
+              Biometric attendance system combining Android mobile capture,
+              backend API services and machine learning-based face verification.
+            </p>
 
-  {/* =========================
-      FRONTEND / MOBILE
-  ========================= */}
-  <div className="tech-row">
+            <div className="tech-row">
+              <span className="tech-pill"><FaAndroid /> Android</span>
+              <span className="tech-pill"><FaJava /> Java</span>
+              <span className="tech-pill">Kotlin</span>
+              <span className="tech-pill"><FaReact /> React</span>
 
-    <span className="tech-pill">
-      <FaAndroid /> Kotlin
-    </span>
+              <span className="tech-pill"><FaNodeJs /> Node.js</span>
+              <span className="tech-pill"><SiExpress /> Express</span>
+              <span className="tech-pill"><FaDatabase /> MongoDB</span>
 
-    <span className="tech-pill">
-      <FaJava /> Java
-    </span>
+              <span className="tech-pill"><SiOpencv /> OpenCV</span>
+              <span className="tech-pill"><SiTensorflow /> TensorFlow Lite</span>
+            </div>
 
-  
-                  <span className="tech-pill"><FaDatabase /> MongoDB</span>
+          </div>
 
-    <span className="tech-pill">
-      <FaNodeJs /> Node.js
-    </span>
+          <div className="project-footer">
+            <a
+              href="https://www.youtube.com/watch?v=-kkBO2pkZYM"
+              className="primary-btn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Demo
+            </a>
+          </div>
+        </motion.div>
 
-    <span className="tech-pill">
-      <SiExpress /> Express
-    </span>
+        {/* CHATBOT */}
+        <motion.div className="card project" whileHover={{ scale: 1.02 }}>
+          <div className="project-content">
 
+            <h3>AI Customer Support Chatbot</h3>
 
-    <span className="tech-pill">
-      <SiOpencv /> OpenCV
-    </span>
+            <p>
+              Intelligent chatbot for telecom support using NLP and ML.
+              Intent detection, cosine similarity and feedback learning.
+            </p>
 
-    <span className="tech-pill">
-      <SiTensorflow /> TensorFlow Lite
-    </span>
+            <div className="tech-row">
+              <span className="tech-pill"><FaPython /> Python</span>
+              <span className="tech-pill"><SiDjango /> Django</span>
+              <span className="tech-pill"><FaBrain /> NLTK</span>
+              <span className="tech-pill"><SiScikitlearn /> Scikit-learn</span>
 
-  </div>
+              <span className="tech-pill">SVM</span>
+              <span className="tech-pill">PCA</span>
 
-</div>
+              <span className="tech-pill"><FaBootstrap /> Bootstrap</span>
+              <span className="tech-pill"><FaJs /> JavaScript</span>
+              <span className="tech-pill"><FaHtml5 /> HTML</span>
+            </div>
 
-<div className="project-footer">
-  <a
-    href="https://github.com/manuacostaok/LogerFaceRecognition"
-    className="primary-btn"
-    target="_blank"
-    rel="noreferrer"
-  >
-    View Project
-  </a>
-</div>
+          </div>
+
+          <div className="project-footer">
+            <a
+              href="https://github.com/manuacostaok/chatbot"
+              className="primary-btn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Project
+            </a>
+          </div>
         </motion.div>
 
         {/* OTHER PROJECTS */}
-<motion.div className="card project" whileHover={{ scale: 1.02 }}>
+        <motion.div className="card project" whileHover={{ scale: 1.02 }}>
+          <div className="project-content">
 
-  <div className="project-content">
+            <h3>Other Projects</h3>
 
-    <h3>Other Projects</h3>
+            <p>
+              Academic systems, backend APIs, Java apps and frontend experiments
+              including machine learning prototypes.
+            </p>
 
-    <p>
-      Additional projects including backend APIs, authentication systems,
-      Java applications and frontend experiments.
-    </p>
+            <div className="tech-row">
+              <span className="tech-pill"><FaReact /> React</span>
+              <span className="tech-pill"><FaJs /> JavaScript</span>
+              <span className="tech-pill"><FaHtml5 /> HTML</span>
+              <span className="tech-pill"><FaCss3Alt /> CSS</span>
 
-    {/* TECH */}
-    <div className="tech-row">
+              <span className="tech-pill"><SiDjango /> Django</span>
+              <span className="tech-pill"><FaNodeJs /> Node.js</span>
+              <span className="tech-pill"><SiExpress /> Express</span>
+              <span className="tech-pill"><FaDatabase /> SQL</span>
+              <span className="tech-pill"><FaJava /> Java</span>
 
-      <span className="tech-pill"><FaReact /> React</span>
-      <span className="tech-pill"><FaNodeJs /> Node</span>
-      <span className="tech-pill"><SiExpress /> Express</span>
-      <span className="tech-pill"><FaDatabase /> MongoDB</span>
-      <span className="tech-pill"><FaJava /> Java</span>
-      <span className="tech-pill"><SiJavascript /> JS</span>
+              <span className="tech-pill"><FaBrain /> NLP / ML</span>
+              <span className="tech-pill"><SiScikitlearn /> Scikit-learn</span>
+            </div>
 
-    </div>
+          </div>
 
-  </div>
-
-  <div className="project-footer">
-
-    <a
-      href="https://github.com/manuacostaok?tab=repositories"
-      target="_blank"
-      rel="noreferrer"
-      className="violet-btn"
-    >
-      View More
-    </a>
-
-  </div>
-
-</motion.div>
+          <div className="project-footer">
+            <a
+              href="https://github.com/manuacostaok?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+              className="violet-btn"
+            >
+              View More
+            </a>
+          </div>
+        </motion.div>
 
       </div>
-
     </section>
   );
 };

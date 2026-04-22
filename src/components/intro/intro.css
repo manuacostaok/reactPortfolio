@@ -1,6 +1,11 @@
+/* =========================
+   HERO LAYOUT
+========================= */
+
 .hero-right {
   perspective: 1200px;
 }
+
 .hero-logo-3d {
   font-size: 140px;
   font-weight: 900;
@@ -18,16 +23,73 @@
 
   animation: floatY 6s ease-in-out infinite;
 }
+
+/* HOVER */
 .hero-logo-3d:hover {
-  transform: rotateY(30deg) rotateX(12deg) scale(1.08);
+  transform: rotateY(25deg) rotateX(10deg) scale(1.08);
   text-shadow: 0 0 40px rgba(79,70,229,0.6);
 }
-@keyframes floatOnly {
+
+/* FLOAT ANIMATION */
+@keyframes floatY {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
   100% { transform: translateY(0px); }
 }
-.hero-logo-3d:hover {
-  transform: rotateY(25deg) rotateX(10deg) scale(1.08);
-  text-shadow: 0 0 40px rgba(79,70,229,0.6);
+
+/* =========================
+   MOBILE FIX (🔥 CLAVE)
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 0 20px; /* evita overflow lateral */
+  }
+
+  .hero-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;         /* 🔥 clave */
+    max-width: 100%;     /* 🔥 clave */
+
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;         /* 🔥 ESTO ARREGLA TODO */
+    max-width: 100%;
+  }
+
+  .hero-left {
+    order: 1;
+  }
+
+  .hero-right {
+    order: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-logo-3d {
+    font-size: 90px;
+    letter-spacing: 6px;
+
+    max-width: 100%;     /* 🔥 evita overflow */
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
 }

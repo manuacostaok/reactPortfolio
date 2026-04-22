@@ -7,11 +7,11 @@ export const Intro = () => {
   console.log("INTRO RENDER");
 
   const messages = [
-    "Hi, I’m Manuel Acosta 👋",
-    "Full Stack Developer",
-    "I build fast, scalable web apps",
-    "Contact me!!!"
-  ];
+  "Hi, I’m Manuel Acosta 👋",
+  "Full Stack Developer",
+  "Building Web, Mobile & AI Systems",
+  "From idea to production"
+];
 
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
@@ -64,7 +64,7 @@ export const Intro = () => {
           </h1>
 
           <p className="subtitle">
-            I build scalable web applications.
+Building scalable applications across web, mobile and AI systems.
           </p>
 
           <div className="hero-buttons">

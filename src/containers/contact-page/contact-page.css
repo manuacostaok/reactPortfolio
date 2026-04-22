@@ -150,3 +150,230 @@
     grid-template-columns: 1fr;
   }
 }
+.error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.submit-btn.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.submit-btn {
+  transition: all 0.25s ease;
+}
+
+/* =========================
+   SUCCESS OVERLAY
+========================= */
+
+.form-wrapper {
+  position: relative;
+}
+
+/* overlay */
+.success-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(15, 15, 16, 0.6);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+
+  animation: fadeIn 0.3s ease;
+  z-index: 10;
+}
+
+/* caja */
+.success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  transform: scale(0.8);
+  animation: popIn 0.4s ease forwards;
+}
+
+.success-box p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* =========================
+   CHECKMARK ANIMADO
+========================= */
+
+.checkmark {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  border: 3px solid var(--primary);
+
+  position: relative;
+
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+
+  left: 16px;
+  top: 10px;
+
+  width: 12px;
+  height: 26px;
+
+  border-right: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
+
+  transform: rotate(45deg) scale(0);
+
+  animation: drawCheck 0.4s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* =========================
+   FORM FADE OUT
+========================= */
+
+.fade-out {
+  opacity: 0.3;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes drawCheck {
+  to {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+/* overlay centrado real */
+.success-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+
+  border-radius: 16px;
+  z-index: 10;
+}
+
+/* caja */
+.success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  animation: fadeScale 0.4s ease;
+}
+
+/* check PERFECTAMENTE centrado */
+.checkmark {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+/* dibujo del tilde */
+.checkmark::after {
+  content: "";
+  width: 16px;
+  height: 28px;
+
+  border-right: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
+
+  transform: rotate(45deg);
+}
+
+/* animación */
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contact-form {
+  padding: 24px; /* 🔥 clave */
+  border-radius: 16px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  box-sizing: border-box; /* 🔥 IMPORTANTÍSIMO */
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
+  background: var(--card);
+  color: var(--text);
+}
+.contact-container {
+  gap: 40px; /* separa izquierda y form */
+}
