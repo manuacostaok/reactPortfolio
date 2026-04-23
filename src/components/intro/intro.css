@@ -92,4 +92,21 @@
     gap: 12px;
   }
 
+}.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-title .icon {
+  font-size: 28px;
+  transform: translateY(-2px);
+}
+
+.cursor {
+  margin-left: 4px;
+  color: var(--primary);
+  animation: blink 0.8s infinite;
 }

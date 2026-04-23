@@ -8,15 +8,15 @@ export const Intro = ({ lang = "en" }) => {
   const messages = lang === "en"
     ? [
         "Hi, I’m Manuel Acosta 👋",
-        "Full Stack Developer",
-        "Building Web, Mobile & AI Systems",
-        "From idea to production"
+        "Full Stack Developer 💻",
+        "Building Web, Mobile & AI Systems 🚀",
+        "From idea to production ⚙️"
       ]
     : [
         "Hola, soy Manuel Acosta 👋",
-        "Desarrollador Full Stack",
-        "Web · Mobile · Inteligencia Artificial",,
-        "Transformando ideas en software funcional"
+        "Desarrollador Full Stack 💻",
+        "Web · Mobile · IA 🚀",
+        "Transformando ideas en software funcional ⚙️"
       ];
 
   const [text, setText] = useState("");
@@ -27,29 +27,36 @@ export const Intro = ({ lang = "en" }) => {
   useEffect(() => {
   const current = messages[index] || "";
 
-  if (!current) return;
-
   const timeout = setTimeout(() => {
+
+    // ESCRIBIENDO
     if (!deleting) {
       setText(current.substring(0, subIndex + 1));
-      setSubIndex(subIndex + 1);
+      setSubIndex((prev) => prev + 1);
 
+      // cuando termina de escribir → empieza a borrar
       if (subIndex === current.length) {
         setDeleting(true);
       }
-    } else {
-      setText(current.substring(0, subIndex - 1));
-      setSubIndex(subIndex - 1);
+    }
 
+    // BORRANDO
+    else {
+      setText(current.substring(0, subIndex - 1));
+      setSubIndex((prev) => prev - 1);
+
+      // cuando termina de borrar → siguiente frase
       if (subIndex === 0) {
         setDeleting(false);
-        setIndex((prev) => (prev + 1) % messages.length);
+        setIndex((prev) => (prev + 1) % messages.length); // 🔥 LOOP INFINITO
       }
     }
+
   }, deleting ? 40 : 80);
 
   return () => clearTimeout(timeout);
-}, [subIndex, deleting, index]);
+
+}, [subIndex, deleting, index, messages]);
 
   return (
     <section className="hero">
