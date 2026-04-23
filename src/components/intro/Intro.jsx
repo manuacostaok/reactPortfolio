@@ -3,15 +3,21 @@ import { motion } from "framer-motion";
 import { FiGithub, FiDownload } from "react-icons/fi";
 import { HeroLogo3D } from "./HeroLogo3D.jsx";
 
-export const Intro = () => {
-  console.log("INTRO RENDER");
+export const Intro = ({ lang = "en" }) => {
 
-  const messages = [
-  "Hi, I’m Manuel Acosta 👋",
-  "Full Stack Developer",
-  "Building Web, Mobile & AI Systems",
-  "From idea to production"
-];
+  const messages = lang === "en"
+    ? [
+        "Hi, I’m Manuel Acosta 👋",
+        "Full Stack Developer",
+        "Building Web, Mobile & AI Systems",
+        "From idea to production"
+      ]
+    : [
+        "Hola, soy Manuel Acosta 👋",
+        "Desarrollador Full Stack",
+        "Web · Mobile · Inteligencia Artificial",,
+        "Transformando ideas en software funcional"
+      ];
 
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
@@ -26,9 +32,7 @@ export const Intro = () => {
         setText(current.substring(0, subIndex + 1));
         setSubIndex(subIndex + 1);
 
-        if (subIndex === current.length) {
-          setDeleting(true);
-        }
+        if (subIndex === current.length) setDeleting(true);
       } else {
         setText(current.substring(0, subIndex - 1));
         setSubIndex(subIndex - 1);
@@ -41,22 +45,19 @@ export const Intro = () => {
     }, deleting ? 40 : 80);
 
     return () => clearTimeout(timeout);
-  }, [subIndex, deleting, index]);
+  }, [subIndex, deleting, index, lang]);
 
   return (
     <section className="hero">
 
-      <motion.div
-        className="hero-center"
-        initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      <motion.div className="hero-center">
 
-        {/* LEFT SIDE */}
+        {/* LEFT */}
         <div className="hero-left">
 
-          <p className="badge">Available for work</p>
+          <p className="badge">
+            {lang === "en" ? "Available for work" : "Disponible para trabajar"}
+          </p>
 
           <h1>
             {text}
@@ -64,38 +65,41 @@ export const Intro = () => {
           </h1>
 
           <p className="subtitle">
-Building scalable applications across web, mobile and AI systems.
+            {lang === "en"
+              ? "Building scalable applications across web, mobile and AI systems."
+              : "Construyendo aplicaciones escalables web, mobile y sistemas de IA."
+            }
           </p>
 
           <div className="hero-buttons">
-
+{/* BOTON VER  REPO 
             <a
               href="https://github.com/manuacostaok?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
               className="primary-btn"
+              target="_blank"
+              rel="noreferrer"
             >
-              <FiGithub size={16} />
-              View Projects
+              <FiGithub />
+              {lang === "en" ? "View Projects" : "Ver proyectos"}
             </a>
-
+*/}
             <a
-              href="/cv.pdf"
+              href={lang === "en" ? "/cv_Manuel_Dev_En_2026.pdf" : "/cv_Manuel_Dev_ES_2026.pdf"}
               download
               className="secondary-btn"
             >
-              <FiDownload size={16} />
-              Download CV
+              <FiDownload />
+              {lang === "en" ? "Download CV" : "Descargar CV"}
             </a>
 
           </div>
 
         </div>
 
-        {/* RIGHT SIDE (LOGO 3D) */}
+        {/* RIGHT */}
         <div className="hero-right">
-  <HeroLogo3D />
-</div>
+          <HeroLogo3D />
+        </div>
 
       </motion.div>
 

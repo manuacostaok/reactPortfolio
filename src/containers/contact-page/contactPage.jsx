@@ -3,7 +3,42 @@ import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "./contact-page.css";
 
-export const ContactPage = () => {
+export const ContactPage = ({ lang = "en" }) => {
+  const t = {
+    en: {
+      title: "Let’s build something together",
+      subtitle:
+        "I’m open to freelance work, collaborations or full-time roles. Send me a message and I’ll reply as soon as possible.",
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      send: "Send Message",
+      sending: "Sending...",
+      success: "Message Sent",
+      nameRequired: "Name is required",
+      emailRequired: "Email is required",
+      emailInvalid: "Invalid email",
+      messageRequired: "Message is required",
+      messageShort: "Message too short"
+    },
+    es: {
+      title: "Construyamos algo juntos",
+      subtitle:
+        "Estoy abierto a trabajos freelance, colaboraciones o roles full-time. Envíame un mensaje y te respondo lo antes posible.",
+      name: "Nombre",
+      email: "Correo",
+      message: "Mensaje",
+      send: "Enviar mensaje",
+      sending: "Enviando...",
+      success: "Mensaje enviado",
+      nameRequired: "El nombre es obligatorio",
+      emailRequired: "El email es obligatorio",
+      emailInvalid: "Email inválido",
+      messageRequired: "El mensaje es obligatorio",
+      messageShort: "El mensaje es muy corto"
+    }
+  }[lang];
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -15,10 +50,10 @@ export const ContactPage = () => {
 
   const [errors, setErrors] = useState({});
 
-  // 🔊 sonido sutil (tipo click moderno)
+  // 🔊 sonido
   const playSuccessSound = () => {
-    const audio = new Audio("/success.mp3"); // ponelo en /public
-    audio.volume = 0.3;
+    const audio = new Audio("/success.mp3");
+    audio.volume = 0.25;
     audio.play().catch(() => {});
   };
 
@@ -29,19 +64,19 @@ export const ContactPage = () => {
     const newErrors = {};
 
     if (!form.from_name.trim()) {
-      newErrors.from_name = "Name is required";
+      newErrors.from_name = t.nameRequired;
     }
 
     if (!form.from_email.trim()) {
-      newErrors.from_email = "Email is required";
+      newErrors.from_email = t.emailRequired;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.from_email)) {
-      newErrors.from_email = "Invalid email";
+      newErrors.from_email = t.emailInvalid;
     }
 
     if (!form.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = t.messageRequired;
     } else if (form.message.length < 10) {
-      newErrors.message = "Message too short";
+      newErrors.message = t.messageShort;
     }
 
     setErrors(newErrors);
@@ -69,10 +104,7 @@ export const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!validate()) {
-
-      return;
-    }
+    if (!validate()) return;
 
     setLoading(true);
 
@@ -87,40 +119,31 @@ export const ContactPage = () => {
         playSuccessSound();
         setSuccess(true);
 
-
         setForm({
           from_name: "",
           from_email: "",
           message: "",
         });
 
-        setTimeout(() => {
-          setSuccess(false);
-        }, 2500);
+        setTimeout(() => setSuccess(false), 2500);
       })
       .catch((err) => {
         console.error("EMAIL ERROR:", err);
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   };
 
   return (
     <section className="contact-page">
-
 
       <div className="contact-container">
 
         {/* LEFT */}
         <div className="contact-info">
 
-          <h2>Let’s build something together</h2>
+          <h2>{t.title}</h2>
 
-          <p>
-            I’m open to freelance work, collaborations or full-time roles.
-            Send me a message and I’ll reply as soon as possible.
-          </p>
+          <p>{t.subtitle}</p>
 
           <div className="contact-socials">
 
@@ -148,14 +171,14 @@ export const ContactPage = () => {
 
         </div>
 
-        {/* FORM + ANIMATION */}
+        {/* FORM */}
         <div className="form-wrapper">
 
           {success && (
             <div className="success-overlay">
               <div className="success-box">
-                <div className="checkmark"></div>
-                <p>Message Sent</p>
+                <div className="checkmark" />
+                <p>{t.success}</p>
               </div>
             </div>
           )}
@@ -166,36 +189,42 @@ export const ContactPage = () => {
           >
 
             <div className="input-group">
-              <label>Name</label>
+              <label>{t.name}</label>
               <input
                 type="text"
                 name="from_name"
                 value={form.from_name}
                 onChange={handleChange}
               />
-              {errors.from_name && <span className="error">{errors.from_name}</span>}
+              {errors.from_name && (
+                <span className="error">{errors.from_name}</span>
+              )}
             </div>
 
             <div className="input-group">
-              <label>Email</label>
+              <label>{t.email}</label>
               <input
                 type="email"
                 name="from_email"
                 value={form.from_email}
                 onChange={handleChange}
               />
-              {errors.from_email && <span className="error">{errors.from_email}</span>}
+              {errors.from_email && (
+                <span className="error">{errors.from_email}</span>
+              )}
             </div>
 
             <div className="input-group">
-              <label>Message</label>
+              <label>{t.message}</label>
               <textarea
                 name="message"
                 rows="6"
                 value={form.message}
                 onChange={handleChange}
               />
-              {errors.message && <span className="error">{errors.message}</span>}
+              {errors.message && (
+                <span className="error">{errors.message}</span>
+              )}
             </div>
 
             <button
@@ -203,7 +232,7 @@ export const ContactPage = () => {
               disabled={loading}
               className={`submit-btn ${loading ? "loading" : ""}`}
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? t.sending : t.send}
             </button>
 
           </form>

@@ -6,18 +6,34 @@ import { FiSun, FiMoon, FiGlobe } from "react-icons/fi";
 export const Navbar = ({
   toggleTheme,
   theme,
-  lang = "es",
+  lang = "en",
   toggleLang
 }) => {
-  const safeLang = lang || "es";
 
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
 
-  // LOGO 3D REF
   const logoRef = useRef(null);
 
-  // SCROLL EFFECT + ACTIVE SECTION
+  // =========================
+  // TRANSLATIONS
+  // =========================
+  const t = {
+    en: {
+      home: "Home",
+      projects: "Projects",
+      contact: "Contact"
+    },
+    es: {
+      home: "Inicio",
+      projects: "Proyectos",
+      contact: "Contacto"
+    }
+  }[lang];
+
+  // =========================
+  // SCROLL ACTIVE SECTION
+  // =========================
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -41,7 +57,7 @@ export const Navbar = ({
   }, []);
 
   // =========================
-  // LOGO 3D TILT
+  // 3D LOGO EFFECT
   // =========================
   const handleLogoMove = (e) => {
     const el = logoRef.current;
@@ -83,10 +99,10 @@ export const Navbar = ({
       className={`navbar ${scrolled ? "shrink" : ""}`}
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5 }}
     >
 
-      {/* LOGO 3D */}
+      {/* LOGO */}
       <div
         ref={logoRef}
         className="logo glow"
@@ -98,18 +114,42 @@ export const Navbar = ({
 
       {/* LINKS */}
       <div className="nav-links">
+
         <a className={active === "home" ? "active" : ""} href="#home">
-          Home
+          {t.home}
         </a>
+
         <a className={active === "projects" ? "active" : ""} href="#projects">
-          Projects
+          {t.projects}
         </a>
+
         <a className={active === "contact" ? "active" : ""} href="#contact">
-          Contact
+          {t.contact}
         </a>
+
       </div>
 
-      
+      {/* ACTIONS */}
+      <div className="nav-actions">
+
+        {/* LANGUAGE BUTTON (Apple style) */}
+        <button
+          className={`lang-toggle ${lang === "en" ? "en" : "es"}`}
+          onClick={toggleLang}
+        >
+          <FiGlobe size={14} />
+          <span className="lang-text">
+            {lang === "en" ? "ES" : "EN"}
+          </span>
+          <span className="lang-indicator" />
+        </button>
+
+        {/* THEME */}
+        <button onClick={toggleTheme} className="theme-toggle">
+          {theme === "dark" ? <FiSun /> : <FiMoon />}
+        </button>
+
+      </div>
 
     </motion.nav>
   );

@@ -33,6 +33,7 @@ export const Home = () => {
         lang={lang}
         toggleLang={toggleLang}
       />
+      
 
       <main>
         <section id="home">

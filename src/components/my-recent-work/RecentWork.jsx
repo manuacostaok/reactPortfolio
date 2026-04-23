@@ -22,10 +22,50 @@ import {
   SiScikitlearn
 } from "react-icons/si";
 
-export const RecentWork = () => {
+export const RecentWork = ({ lang = "en" }) => {
+  const t = {
+    en: {
+      title: "Featured Projects",
+      taskTitle: "Task Manager App",
+      taskDesc:
+        "Full stack application for task management with authentication, CRUD operations and persistent database.",
+      loggerTitle: "Logger Face Recognition System",
+      loggerDesc:
+          "Biometric system for tracking entries and exits in a facility, with Android capture, backend API, and machine learning-based verification.",
+      chatbotTitle: "AI Customer Support Chatbot",
+      chatbotDesc:
+          "Intelligent customer support chatbot using NLP and machine learning techniques for intent detection. Includes fingerprint authentication.",
+      otherTitle: "Other Projects",
+      otherDesc:
+        "Academic systems, backend APIs, Java apps and frontend experiments including ML prototypes.",
+      viewProject: "View Project",
+      viewDemo: "View Demo",
+      viewMore: "View More"
+    },
+
+    es: {
+      title: "Proyectos Destacados",
+      taskTitle: "Gestor de Tareas",
+      taskDesc:
+        "Aplicación full stack para gestión de tareas con autenticación, CRUD y base de datos persistente.",
+      loggerTitle: "Sistema de Reconocimiento Facial",
+      loggerDesc:
+        "Sistema biométrico de registro de ingresos y egresos de un lugar, con con captura Android, API backend y verificación con machine learning.",
+      chatbotTitle: "Chatbot de Soporte con IA",
+      chatbotDesc:
+        "Chatbot inteligente para soporte usando NLP y técnicas de ML para detección de intenciones. Con lector de huella digital",
+      otherTitle: "Otros Proyectos",
+      otherDesc:
+        "Sistemas académicos, APIs backend, apps Java y experimentos frontend.",
+      viewProject: "Ver Proyecto",
+      viewDemo: "Ver Demo",
+      viewMore: "Ver Más"
+    }
+  }[lang];
+
   return (
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <h2>{t.title}</h2>
 
       <div className="projects-grid">
 
@@ -33,12 +73,9 @@ export const RecentWork = () => {
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
 
-            <h3>Task Manager App</h3>
+            <h3>{t.taskTitle}</h3>
 
-            <p>
-              Full stack application for task management with authentication,
-              CRUD operations and persistent database.
-            </p>
+            <p>{t.taskDesc}</p>
 
             <div className="tech-row">
               <span className="tech-pill"><FaReact /> React</span>
@@ -50,13 +87,8 @@ export const RecentWork = () => {
           </div>
 
           <div className="project-footer">
-            <a
-              href="https://task-manager-acosta.vercel.app"
-              className="primary-btn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View Project
+            <a className="primary-btn" target="_blank" rel="noreferrer">
+              {t.viewProject}
             </a>
           </div>
         </motion.div>
@@ -65,12 +97,9 @@ export const RecentWork = () => {
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
 
-            <h3>Logger Face Recognition System</h3>
+            <h3>{t.loggerTitle}</h3>
 
-            <p>
-              Biometric attendance system combining Android mobile capture,
-              backend API services and machine learning-based face verification.
-            </p>
+            <p>{t.loggerDesc}</p>
 
             <div className="tech-row">
               <span className="tech-pill"><FaAndroid /> Android</span>
@@ -89,13 +118,8 @@ export const RecentWork = () => {
           </div>
 
           <div className="project-footer">
-            <a
-              href="https://www.youtube.com/watch?v=-kkBO2pkZYM"
-              className="primary-btn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View Demo
+            <a className="primary-btn" target="_blank" rel="noreferrer">
+              {t.viewDemo}
             </a>
           </div>
         </motion.div>
@@ -104,12 +128,9 @@ export const RecentWork = () => {
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
 
-            <h3>AI Customer Support Chatbot</h3>
+            <h3>{t.chatbotTitle}</h3>
 
-            <p>
-              Intelligent chatbot for telecom support using NLP and ML.
-              Intent detection, cosine similarity and feedback learning.
-            </p>
+            <p>{t.chatbotDesc}</p>
 
             <div className="tech-row">
               <span className="tech-pill"><FaPython /> Python</span>
@@ -128,27 +149,19 @@ export const RecentWork = () => {
           </div>
 
           <div className="project-footer">
-            <a
-              href="https://github.com/manuacostaok/chatbot"
-              className="primary-btn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View Project
+            <a className="primary-btn" target="_blank" rel="noreferrer">
+              {t.viewProject}
             </a>
           </div>
         </motion.div>
 
-        {/* OTHER PROJECTS */}
+        {/* OTHER */}
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
 
-            <h3>Other Projects</h3>
+            <h3>{t.otherTitle}</h3>
 
-            <p>
-              Academic systems, backend APIs, Java apps and frontend experiments
-              including machine learning prototypes.
-            </p>
+            <p>{t.otherDesc}</p>
 
             <div className="tech-row">
               <span className="tech-pill"><FaReact /> React</span>
@@ -175,7 +188,7 @@ export const RecentWork = () => {
               rel="noreferrer"
               className="violet-btn"
             >
-              View More
+              {t.viewMore}
             </a>
           </div>
         </motion.div>

@@ -1,4 +1,5 @@
 import "./about-me-skills.css";
+import { useMemo } from "react";
 
 import {
   FaReact,
@@ -25,10 +26,49 @@ import {
   SiScikitlearn
 } from "react-icons/si";
 
-export const AboutMeSkills = () => {
+export const AboutMeSkills = ({ lang = "en" }) => {
+
+  const text = useMemo(() => ({
+    en: {
+      title: "About me",
+      tech: "Technologies",
+
+      p1: "Full Stack Developer building scalable applications across web, mobile and AI systems.",
+      p2: "Experience delivering real-world projects including REST APIs, authentication systems, Android apps and AI-based solutions using computer vision and natural language processing.",
+      p3: "Focused on transforming complex ideas into efficient, user-ready products with clean and maintainable code.",
+
+      groups: {
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Mobile",
+        ai: "AI / Machine Learning",
+        tools: "Tools & DevOps"
+      }
+    },
+
+    es: {
+      title: "Sobre mí",
+      tech: "Tecnologías",
+
+      p1: "Desarrollador Full Stack enfocado en la creación de aplicaciones escalables para web, mobile e inteligencia artificial.",
+      p2: "Experiencia en el desarrollo de proyectos reales que incluyen APIs REST, sistemas de autenticación, aplicaciones Android y soluciones de IA basadas en visión por computadora y procesamiento de lenguaje natural.",
+      p3: "Enfocado en transformar ideas complejas en productos eficientes, orientados a usuarios, con código limpio, mantenible y buenas prácticas de desarrollo.",
+
+      groups: {
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Mobile",
+        ai: "IA / Machine Learning",
+        tools: "Herramientas & DevOps"
+      }
+    }
+  }), []);
+
+  const t = text[lang] || text.en;
+
   const skills = [
     {
-      title: "Frontend",
+      key: "frontend",
       items: [
         { icon: <FaReact />, name: "React" },
         { icon: <FaJs />, name: "JavaScript" },
@@ -38,7 +78,7 @@ export const AboutMeSkills = () => {
       ],
     },
     {
-      title: "Backend",
+      key: "backend",
       items: [
         { icon: <FaNodeJs />, name: "Node.js" },
         { icon: <SiExpress />, name: "Express" },
@@ -46,15 +86,14 @@ export const AboutMeSkills = () => {
       ],
     },
     {
-      title: "Mobile",
+      key: "mobile",
       items: [
         { icon: <FaAndroid />, name: "Android" },
-        { icon: <FaJava />, name: "Java" },
-        { icon: <FaJava />, name: "Kotlin" },
+        { icon: <FaJava />, name: "Java / Kotlin" },
       ],
     },
     {
-      title: "AI / Machine Learning",
+      key: "ai",
       items: [
         { icon: <FaBrain />, name: "NLP" },
         { icon: <SiTensorflow />, name: "TensorFlow Lite" },
@@ -63,7 +102,7 @@ export const AboutMeSkills = () => {
       ],
     },
     {
-      title: "Tools & DevOps",
+      key: "tools",
       items: [
         { icon: <FaGitAlt />, name: "Git" },
         { icon: <SiJira />, name: "Jira" },
@@ -79,34 +118,26 @@ export const AboutMeSkills = () => {
 
       {/* ABOUT */}
       <div className="about hero-about">
-        
-        <h2>About me</h2>
 
-        <p>
-          Full Stack Developer building scalable applications across web, mobile and AI systems.
-        </p>
+        <h2>{t.title}</h2>
 
-        <p>
-          Experience delivering real-world projects including REST APIs, authentication systems,
-          Android apps and AI-based solutions using computer vision and natural language processing.
-        </p>
-
-        <p>
-          Focused on transforming complex ideas into efficient, user-ready products
-          with clean and maintainable code.
-        </p>
+        <p>{t.p1}</p>
+        <p>{t.p2}</p>
+        <p>{t.p3}</p>
 
       </div>
 
       {/* TECHNOLOGIES */}
       <div className="skills">
 
-        <h2>Technologies</h2>
+        <h2>{t.tech}</h2>
 
         {skills.map((group, i) => (
           <div key={i} className="skill-group">
 
-            <h3 className="skill-title">{group.title}</h3>
+            <h3 className="skill-title">
+              {t.groups[group.key]}
+            </h3>
 
             <div className="skills-grid">
               {group.items.map((skill, j) => (
