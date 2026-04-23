@@ -25,27 +25,31 @@ export const Intro = ({ lang = "en" }) => {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const current = messages[index];
+  const current = messages[index] || "";
 
-    const timeout = setTimeout(() => {
-      if (!deleting) {
-        setText(current.substring(0, subIndex + 1));
-        setSubIndex(subIndex + 1);
+  if (!current) return;
 
-        if (subIndex === current.length) setDeleting(true);
-      } else {
-        setText(current.substring(0, subIndex - 1));
-        setSubIndex(subIndex - 1);
+  const timeout = setTimeout(() => {
+    if (!deleting) {
+      setText(current.substring(0, subIndex + 1));
+      setSubIndex(subIndex + 1);
 
-        if (subIndex === 0) {
-          setDeleting(false);
-          setIndex((prev) => (prev + 1) % messages.length);
-        }
+      if (subIndex === current.length) {
+        setDeleting(true);
       }
-    }, deleting ? 40 : 80);
+    } else {
+      setText(current.substring(0, subIndex - 1));
+      setSubIndex(subIndex - 1);
 
-    return () => clearTimeout(timeout);
-  }, [subIndex, deleting, index, lang]);
+      if (subIndex === 0) {
+        setDeleting(false);
+        setIndex((prev) => (prev + 1) % messages.length);
+      }
+    }
+  }, deleting ? 40 : 80);
+
+  return () => clearTimeout(timeout);
+}, [subIndex, deleting, index]);
 
   return (
     <section className="hero">

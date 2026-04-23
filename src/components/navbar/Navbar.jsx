@@ -1,10 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import "./navbar.css";
-import { FiSun, FiMoon, FiGlobe } from "react-icons/fi";
+import { FiGlobe } from "react-icons/fi";
 
 export const Navbar = ({
-  toggleTheme,
   theme,
   lang = "en",
   toggleLang
@@ -12,12 +11,8 @@ export const Navbar = ({
 
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
-
   const logoRef = useRef(null);
 
-  // =========================
-  // TRANSLATIONS
-  // =========================
   const t = {
     en: {
       home: "Home",
@@ -31,9 +26,6 @@ export const Navbar = ({
     }
   }[lang];
 
-  // =========================
-  // SCROLL ACTIVE SECTION
-  // =========================
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -56,9 +48,6 @@ export const Navbar = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // =========================
-  // 3D LOGO EFFECT
-  // =========================
   const handleLogoMove = (e) => {
     const el = logoRef.current;
     if (!el) return;
@@ -99,13 +88,12 @@ export const Navbar = ({
       className={`navbar ${scrolled ? "shrink" : ""}`}
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
     >
 
       {/* LOGO */}
       <div
         ref={logoRef}
-        className="logo glow"
+        className="logo"
         onMouseMove={handleLogoMove}
         onMouseLeave={resetLogo}
       >
@@ -132,21 +120,13 @@ export const Navbar = ({
       {/* ACTIONS */}
       <div className="nav-actions">
 
-        {/* LANGUAGE BUTTON (Apple style) */}
         <button
-          className={`lang-toggle ${lang === "en" ? "en" : "es"}`}
+          className={`lang-toggle ${lang}`}
           onClick={toggleLang}
         >
           <FiGlobe size={14} />
-          <span className="lang-text">
-            {lang === "en" ? "ES" : "EN"}
-          </span>
-          <span className="lang-indicator" />
-        </button>
-
-        {/* THEME */}
-        <button onClick={toggleTheme} className="theme-toggle">
-          {theme === "dark" ? <FiSun /> : <FiMoon />}
+          <span>{lang === "en" ? "EN" : "ES"}</span>
+          <div className="lang-slider" />
         </button>
 
       </div>
