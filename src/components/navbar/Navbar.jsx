@@ -91,14 +91,15 @@ export const Navbar = ({
     >
 
       {/* LOGO */}
-      <div
+      <a
+        href="#home"
         ref={logoRef}
         className="logo"
         onMouseMove={handleLogoMove}
         onMouseLeave={resetLogo}
       >
         MA
-      </div>
+      </a>
 
       {/* LINKS */}
       <div className="nav-links">
