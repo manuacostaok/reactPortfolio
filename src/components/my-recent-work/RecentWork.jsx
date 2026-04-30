@@ -186,7 +186,7 @@ export const RecentWork = ({ lang = "en" }) => {
               rel="noreferrer"
               className="violet-btn"
             >
-              {t.viewMore}
+              {t.viewProject}
             </a>
           </div>
         </motion.div>
