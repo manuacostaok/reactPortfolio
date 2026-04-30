@@ -35,9 +35,9 @@ export const RecentWork = ({ lang = "en" }) => {
       chatbotTitle: "AI Customer Support Chatbot",
       chatbotDesc:
           "Intelligent customer support chatbot using NLP and machine learning techniques for intent detection. Includes fingerprint authentication.",
-      otherTitle: "Other Projects",
+      otherTitle: "Barber Appointments",
       otherDesc:
-        "Academic systems, backend APIs, Java apps and frontend experiments including ML prototypes.",
+        "Business shift management system, shift manager, employee and service management. With login..",
       viewProject: "View Project",
       viewDemo: "View Demo",
       viewMore: "View More"
@@ -54,9 +54,9 @@ export const RecentWork = ({ lang = "en" }) => {
       chatbotTitle: "Chatbot de Soporte con IA",
       chatbotDesc:
         "Chatbot inteligente para soporte usando NLP y técnicas de ML para detección de intenciones. Con lector de huella digital",
-      otherTitle: "Otros Proyectos",
+      otherTitle: "Turnos Barberia",
       otherDesc:
-        "Sistemas académicos, APIs backend, apps Java y experimentos frontend.",
+        "Sistema de turnos para negocio, administrador de turnos, empleados y servicios. Con Login.",
       viewProject: "Ver Proyecto",
       viewDemo: "Ver Demo",
       viewMore: "Ver Más"
@@ -87,7 +87,8 @@ export const RecentWork = ({ lang = "en" }) => {
           </div>
 
           <div className="project-footer">
-            <a className="primary-btn" target="_blank" rel="noreferrer">
+            <a className="primary-btn"               href="https://task-manager-acosta.vercel.app/"
+             target="_blank" rel="noreferrer">
               {t.viewProject}
             </a>
           </div>
@@ -118,7 +119,7 @@ export const RecentWork = ({ lang = "en" }) => {
           </div>
 
           <div className="project-footer">
-            <a className="primary-btn" target="_blank" rel="noreferrer">
+            <a className="primary-btn" target="_blank"  href="https://www.youtube.com/watch?v=-kkBO2pkZYM" rel="noreferrer">
               {t.viewDemo}
             </a>
           </div>
@@ -149,7 +150,9 @@ export const RecentWork = ({ lang = "en" }) => {
           </div>
 
           <div className="project-footer">
-            <a className="primary-btn" target="_blank" rel="noreferrer">
+            <a className="primary-btn"
+            href="https://github.com/manuacostaok/chatbot"
+             target="_blank" rel="noreferrer">
               {t.viewProject}
             </a>
           </div>
@@ -168,22 +171,17 @@ export const RecentWork = ({ lang = "en" }) => {
               <span className="tech-pill"><FaJs /> JavaScript</span>
               <span className="tech-pill"><FaHtml5 /> HTML</span>
               <span className="tech-pill"><FaCss3Alt /> CSS</span>
-
-              <span className="tech-pill"><SiDjango /> Django</span>
+              <span className="tech-pill"><FaDatabase /> MongoDB</span>
               <span className="tech-pill"><FaNodeJs /> Node.js</span>
-              <span className="tech-pill"><SiExpress /> Express</span>
-              <span className="tech-pill"><FaDatabase /> SQL</span>
               <span className="tech-pill"><FaJava /> Java</span>
 
-              <span className="tech-pill"><FaBrain /> NLP / ML</span>
-              <span className="tech-pill"><SiScikitlearn /> Scikit-learn</span>
             </div>
 
           </div>
 
           <div className="project-footer">
             <a
-              href="https://github.com/manuacostaok?tab=repositories"
+              href="https://turnosahora.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="violet-btn"

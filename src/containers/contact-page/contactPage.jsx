@@ -8,7 +8,7 @@ export const ContactPage = ({ lang = "en" }) => {
     en: {
       title: "Let’s build something together",
       subtitle:
-        "I’m open to freelance work, collaborations or full-time roles. Send me a message and I’ll reply as soon as possible.",
+        "I’m open to freelance work, collaborations or full-time roles. Send me a message and I’ll reply as soon as possible. Check out my git repo!",
       name: "Name",
       email: "Email",
       message: "Message",
@@ -24,7 +24,7 @@ export const ContactPage = ({ lang = "en" }) => {
     es: {
       title: "Construyamos algo juntos",
       subtitle:
-        "Estoy abierto a trabajos freelance, colaboraciones o roles full-time. Envíame un mensaje y te respondo lo antes posible.",
+        "Estoy abierto a trabajos freelance, colaboraciones o roles full-time. Envíame un mensaje y te respondo lo antes posible. Mira mi repositorio de github",
       name: "Nombre",
       email: "Correo",
       message: "Mensaje",
