@@ -7,16 +7,18 @@ export const Intro = ({ lang = "en" }) => {
 
   const messages = lang === "en"
     ? [
+      
         "Hi, I’m Manuel Acosta 👋",
         "Full Stack Developer 💻",
-        "Building Web, Mobile & AI Systems 🚀",
-        "From idea to production ⚙️"
+        "I build web systems for businesses 🚀",
+        "Booking, management & automation ⚙️"
       ]
     : [
+      
         "Hola, soy Manuel Acosta 👋",
         "Desarrollador Full Stack 💻",
-        "Web · Mobile · IA 🚀",
-        "Transformando ideas en software funcional ⚙️"
+        "Creo sistemas web para negocios 🚀",
+        "Turnos, gestión y automatización ⚙️"
       ];
 
   const [text, setText] = useState("");
@@ -67,7 +69,7 @@ export const Intro = ({ lang = "en" }) => {
         <div className="hero-left">
 
           <p className="badge">
-            {lang === "en" ? "Available for work" : "Disponible para trabajar"}
+            {lang === "en" ? "Available for freelance or full-timework" : "Disponible para trabajo freelance o full-time"}
           </p>
 
           <h1>
@@ -77,13 +79,13 @@ export const Intro = ({ lang = "en" }) => {
 
           <p className="subtitle">
             {lang === "en"
-              ? "Building scalable applications across web, mobile and AI systems."
-              : "Construyendo aplicaciones escalables web, mobile y sistemas de IA."
+              ? "I develop real-world applications such as scheduling systems, customer management, and process automation."
+              : "Desarrollo aplicaciones reales como sistemas de turnos, gestión de clientes y automatización de procesos."
             }
           </p>
 
           <div className="hero-buttons">
-{/* BOTON VER  REPO 
+
             <a
               href="https://github.com/manuacostaok?tab=repositories"
               className="primary-btn"
@@ -93,7 +95,7 @@ export const Intro = ({ lang = "en" }) => {
               <FiGithub />
               {lang === "en" ? "View Projects" : "Ver proyectos"}
             </a>
-*/}
+
             <a
               href={lang === "en" ? "/cv_Manuel_Dev_En_2026.pdf" : "/cv_Manuel_Dev_ES_2026.pdf"}
               download

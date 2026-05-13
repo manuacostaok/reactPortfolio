@@ -40,12 +40,12 @@ export const Home = () => {
           <Intro lang={lang} />
         </section>
 
-        <section id="about">
-          <AboutMeSkills lang={lang} />
-        </section>
-
         <section id="projects">
           <RecentWork lang={lang} />
+        </section>
+
+        <section id="about">
+          <AboutMeSkills lang={lang} />
         </section>
 
         <section id="contact">

@@ -26,40 +26,50 @@ export const RecentWork = ({ lang = "en" }) => {
   const t = {
     en: {
       title: "Featured Projects",
-      taskTitle: "Task Manager App",
+
+      barberTitle: "Barbershop Booking System",
+      barberDesc:
+        "Full web application for managing appointments, users and schedules with authentication and admin panel.",
+
+      taskTitle: "Task Management System",
       taskDesc:
-        "Full stack application for task management with authentication, CRUD operations and persistent database.",
-      loggerTitle: "Logger Face Recognition System",
+        "Web application to manage tasks with authentication and persistent database.",
+
+      loggerTitle: "Face Recognition Logger",
       loggerDesc:
-          "Biometric system for tracking entries and exits in a facility, with Android capture, backend API, and machine learning-based verification.",
+        "Biometric system to track entries and exits using Android and machine learning.",
+
       chatbotTitle: "AI Customer Support Chatbot",
       chatbotDesc:
-          "Intelligent customer support chatbot using NLP and machine learning techniques for intent detection. Includes fingerprint authentication.",
-      otherTitle: "Barber Appointments",
-      otherDesc:
-        "Business shift management system, shift manager, employee and service management. With login..",
+        "AI-based chatbot with intent detection and automated responses.",
+
       viewProject: "View Project",
       viewDemo: "View Demo",
-      viewMore: "View More"
+      code: "Code"
     },
 
     es: {
       title: "Proyectos Destacados",
-      taskTitle: "Gestor de Tareas",
+
+      barberTitle: "Sistema de Turnos para Barberías",
+      barberDesc:
+        "Aplicación web para gestionar turnos, usuarios y horarios con autenticación y panel de administración.",
+
+      taskTitle: "Sistema de Gestión de Tareas",
       taskDesc:
-        "Aplicación full stack para gestión de tareas con autenticación, CRUD y base de datos persistente.",
+        "Aplicación web para gestionar tareas con autenticación y base de datos persistente.",
+
       loggerTitle: "Sistema de Reconocimiento Facial",
       loggerDesc:
-        "Sistema biométrico de registro de ingresos y egresos de un lugar, con con captura Android, API backend y verificación con machine learning.",
+        "Sistema biométrico para registrar ingresos y egresos con Android y machine learning.",
+
       chatbotTitle: "Chatbot de Soporte con IA",
       chatbotDesc:
-        "Chatbot inteligente para soporte usando NLP y técnicas de ML para detección de intenciones. Con lector de huella digital",
-      otherTitle: "Turnos Barberia",
-      otherDesc:
-        "Sistema de turnos para negocio, administrador de turnos, empleados y servicios. Con Login.",
+        "Chatbot basado en IA con detección de intenciones y respuestas automáticas.",
+
       viewProject: "Ver Proyecto",
       viewDemo: "Ver Demo",
-      viewMore: "Ver Más"
+      code: "Código"
     }
   }[lang];
 
@@ -69,13 +79,67 @@ export const RecentWork = ({ lang = "en" }) => {
 
       <div className="projects-grid">
 
-        {/* TASK MANAGER */}
+        {/* 🔥 BARBER */}
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
+            <h3>{t.barberTitle}</h3>
+            <p>{t.barberDesc}</p>
 
+            <ul className="project-benefits">
+              {lang === "en" ? (
+                <>
+                  <li>✔ Reduces manual booking</li>
+                  <li>✔ Saves time in daily operations</li>
+                  <li>✔ Improves business organization</li>
+                </>
+              ) : (
+                <>
+                  <li>✔ Reduce la gestión manual</li>
+                  <li>✔ Ahorra tiempo en la operación</li>
+                  <li>✔ Mejora la organización</li>
+                </>
+              )}
+            </ul>
+
+            <div className="tech-row">
+              <span className="tech-pill"><FaReact /> React</span>
+              <span className="tech-pill"><FaNodeJs /> Node.js</span>
+              <span className="tech-pill"><SiExpress /> Express</span>
+              <span className="tech-pill"><FaDatabase /> MongoDB</span>
+            </div>
+          </div>
+
+          <div className="project-footer">
+            <a href="https://turnosahora.vercel.app/" target="_blank" rel="noreferrer" className="primary-btn">
+              {t.viewDemo}
+            </a>
+            <a href="https://github.com/manuacostaok/barbershop-booking" target="_blank" rel="noreferrer" className="secondary-btn">
+              {t.code}
+            </a>
+          </div>
+        </motion.div>
+
+        {/* TASK */}
+        <motion.div className="card project" whileHover={{ scale: 1.02 }}>
+          <div className="project-content">
             <h3>{t.taskTitle}</h3>
-
             <p>{t.taskDesc}</p>
+
+            <ul className="project-benefits">
+              {lang === "en" ? (
+                <>
+                  <li>✔ Organizes tasks efficiently</li>
+                  <li>✔ Secure user authentication</li>
+                  <li>✔ Persistent data storage</li>
+                </>
+              ) : (
+                <>
+                  <li>✔ Organiza tareas eficientemente</li>
+                  <li>✔ Autenticación segura</li>
+                  <li>✔ Datos persistentes</li>
+                </>
+              )}
+            </ul>
 
             <div className="tech-row">
               <span className="tech-pill"><FaReact /> React</span>
@@ -83,13 +147,14 @@ export const RecentWork = ({ lang = "en" }) => {
               <span className="tech-pill"><SiExpress /> Express</span>
               <span className="tech-pill"><FaDatabase /> MongoDB</span>
             </div>
-
           </div>
 
           <div className="project-footer">
-            <a className="primary-btn"               href="https://task-manager-acosta.vercel.app/"
-             target="_blank" rel="noreferrer">
-              {t.viewProject}
+            <a href="https://task-manager-acosta.vercel.app/" target="_blank" rel="noreferrer" className="primary-btn">
+              {t.viewDemo}
+            </a>
+            <a href="https://github.com/manuacostaok/task-manager-api" target="_blank" rel="noreferrer" className="secondary-btn">
+              {t.code}
             </a>
           </div>
         </motion.div>
@@ -97,30 +162,40 @@ export const RecentWork = ({ lang = "en" }) => {
         {/* LOGGER */}
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
-
             <h3>{t.loggerTitle}</h3>
-
             <p>{t.loggerDesc}</p>
+
+            <ul className="project-benefits">
+              {lang === "en" ? (
+                <>
+                  <li>✔ Automates entry tracking</li>
+                  <li>✔ Biometric verification</li>
+                  <li>✔ Reduces manual errors</li>
+                </>
+              ) : (
+                <>
+                  <li>✔ Automatiza registros</li>
+                  <li>✔ Verificación biométrica</li>
+                  <li>✔ Reduce errores manuales</li>
+                </>
+              )}
+            </ul>
 
             <div className="tech-row">
               <span className="tech-pill"><FaAndroid /> Android</span>
               <span className="tech-pill"><FaJava /> Java</span>
-              <span className="tech-pill">Kotlin</span>
-              <span className="tech-pill"><FaReact /> React</span>
-
-              <span className="tech-pill"><FaNodeJs /> Node.js</span>
+              <span className="tech-pill"><FaNodeJs /> Node</span>
               <span className="tech-pill"><SiExpress /> Express</span>
               <span className="tech-pill"><FaDatabase /> MongoDB</span>
-
-              <span className="tech-pill"><SiOpencv /> OpenCV</span>
-              <span className="tech-pill"><SiTensorflow /> TensorFlow Lite</span>
             </div>
-
           </div>
 
           <div className="project-footer">
-            <a className="primary-btn" target="_blank"  href="https://www.youtube.com/watch?v=-kkBO2pkZYM" rel="noreferrer">
+            <a href="https://www.youtube.com/watch?v=-kkBO2pkZYM" target="_blank" rel="noreferrer" className="primary-btn">
               {t.viewDemo}
+            </a>
+            <a href="https://github.com/manuacostaok/LogerFaceRecognition" target="_blank" rel="noreferrer" className="secondary-btn">
+              {t.code}
             </a>
           </div>
         </motion.div>
@@ -128,65 +203,35 @@ export const RecentWork = ({ lang = "en" }) => {
         {/* CHATBOT */}
         <motion.div className="card project" whileHover={{ scale: 1.02 }}>
           <div className="project-content">
-
             <h3>{t.chatbotTitle}</h3>
-
             <p>{t.chatbotDesc}</p>
+
+            <ul className="project-benefits">
+              {lang === "en" ? (
+                <>
+                  <li>✔ Automates customer support</li>
+                  <li>✔ Detects user intent</li>
+                  <li>✔ Reduces response time</li>
+                </>
+              ) : (
+                <>
+                  <li>✔ Automatiza soporte al cliente</li>
+                  <li>✔ Detecta intenciones</li>
+                  <li>✔ Reduce tiempos de respuesta</li>
+                </>
+              )}
+            </ul>
 
             <div className="tech-row">
               <span className="tech-pill"><FaPython /> Python</span>
               <span className="tech-pill"><SiDjango /> Django</span>
-              <span className="tech-pill"><FaBrain /> NLTK</span>
-              <span className="tech-pill"><SiScikitlearn /> Scikit-learn</span>
-
-              <span className="tech-pill">SVM</span>
-              <span className="tech-pill">PCA</span>
-
-              <span className="tech-pill"><FaBootstrap /> Bootstrap</span>
-              <span className="tech-pill"><FaJs /> JavaScript</span>
-              <span className="tech-pill"><FaHtml5 /> HTML</span>
+              <span className="tech-pill"><FaBrain /> AI</span>
             </div>
-
           </div>
 
           <div className="project-footer">
-            <a className="primary-btn"
-            href="https://github.com/manuacostaok/chatbot"
-             target="_blank" rel="noreferrer">
-              {t.viewProject}
-            </a>
-          </div>
-        </motion.div>
-
-        {/* OTHER */}
-        <motion.div className="card project" whileHover={{ scale: 1.02 }}>
-          <div className="project-content">
-
-            <h3>{t.otherTitle}</h3>
-
-            <p>{t.otherDesc}</p>
-
-            <div className="tech-row">
-              <span className="tech-pill"><FaReact /> React</span>
-              <span className="tech-pill"><FaJs /> JavaScript</span>
-              <span className="tech-pill"><FaHtml5 /> HTML</span>
-              <span className="tech-pill"><FaCss3Alt /> CSS</span>
-              <span className="tech-pill"><FaDatabase /> MongoDB</span>
-              <span className="tech-pill"><FaNodeJs /> Node.js</span>
-              <span className="tech-pill"><FaJava /> Java</span>
-
-            </div>
-
-          </div>
-
-          <div className="project-footer">
-            <a
-              href="https://turnosahora.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="violet-btn"
-            >
-              {t.viewProject}
+            <a href="https://github.com/manuacostaok/chatbot" target="_blank" rel="noreferrer" className="secondary-btn">
+              {t.code}
             </a>
           </div>
         </motion.div>

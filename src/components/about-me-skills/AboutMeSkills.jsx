@@ -33,16 +33,18 @@ export const AboutMeSkills = ({ lang = "en" }) => {
       title: "About me",
       tech: "Technologies",
 
-      p1: "Full Stack Developer building scalable applications across web, mobile and AI systems.",
-      p2: "Experience delivering real-world projects including REST APIs, authentication systems, Android apps and AI-based solutions using computer vision and natural language processing.",
-      p3: "Focused on transforming complex ideas into efficient, user-ready products with clean and maintainable code.",
+      p1: "Fullstack developer focused on building real-world applications for businesses.",
+
+      p2: "I develop complete systems such as booking platforms, REST APIs with authentication, and admin dashboards that solve real operational problems.",
+
+      p3: "My goal is to create practical, reliable and production-ready solutions that improve organization and save time.",
 
       groups: {
         frontend: "Frontend",
         backend: "Backend",
-        mobile: "Mobile",
-        ai: "AI / Machine Learning",
-        tools: "Tools & DevOps"
+        mobile: "Mobile (basic)",
+        ai: "Other",
+        tools: "Tools"
       }
     },
 
@@ -50,16 +52,18 @@ export const AboutMeSkills = ({ lang = "en" }) => {
       title: "Sobre mí",
       tech: "Tecnologías",
 
-      p1: "Desarrollador Full Stack enfocado en la creación de aplicaciones escalables para web, mobile e inteligencia artificial.",
-      p2: "Experiencia en el desarrollo de proyectos reales que incluyen APIs REST, sistemas de autenticación, aplicaciones Android y soluciones de IA basadas en visión por computadora y procesamiento de lenguaje natural.",
-      p3: "Enfocado en transformar ideas complejas en productos eficientes, orientados a usuarios, con código limpio, mantenible y buenas prácticas de desarrollo.",
+      p1: "Desarrollador Fullstack enfocado en crear aplicaciones reales para negocios.",
+
+      p2: "Desarrollo sistemas completos como plataformas de turnos, APIs con autenticación y paneles de administración que resuelven problemas reales de organización.",
+
+      p3: "Mi objetivo es construir soluciones prácticas, confiables y listas para producción que ahorren tiempo y mejoren la gestión.",
 
       groups: {
         frontend: "Frontend",
         backend: "Backend",
-        mobile: "Mobile",
-        ai: "IA / Machine Learning",
-        tools: "Herramientas & DevOps"
+        mobile: "Mobile (básico)",
+        ai: "Otros",
+        tools: "Herramientas"
       }
     }
   }), []);
@@ -74,7 +78,6 @@ export const AboutMeSkills = ({ lang = "en" }) => {
         { icon: <FaJs />, name: "JavaScript" },
         { icon: <FaHtml5 />, name: "HTML" },
         { icon: <FaCss3Alt />, name: "CSS" },
-        { icon: <SiAngular />, name: "Angular" },
       ],
     },
     {
@@ -83,6 +86,15 @@ export const AboutMeSkills = ({ lang = "en" }) => {
         { icon: <FaNodeJs />, name: "Node.js" },
         { icon: <SiExpress />, name: "Express" },
         { icon: <SiMongodb />, name: "MongoDB" },
+      ],
+    },
+    {
+      key: "tools",
+      items: [
+        { icon: <FaGitAlt />, name: "Git" },
+        { icon: <SiPostman />, name: "Postman" },
+        { icon: <SiVercel />, name: "Vercel" },
+        { icon: <SiRender />, name: "Render" },
       ],
     },
     {
@@ -95,20 +107,8 @@ export const AboutMeSkills = ({ lang = "en" }) => {
     {
       key: "ai",
       items: [
-        { icon: <FaBrain />, name: "NLP" },
-        { icon: <SiTensorflow />, name: "TensorFlow Lite" },
-        { icon: <SiOpencv />, name: "OpenCV" },
-        { icon: <SiScikitlearn />, name: "Scikit-learn" },
-      ],
-    },
-    {
-      key: "tools",
-      items: [
-        { icon: <FaGitAlt />, name: "Git" },
-        { icon: <SiJira />, name: "Jira" },
-        { icon: <SiPostman />, name: "Postman" },
-        { icon: <SiVercel />, name: "Vercel" },
-        { icon: <SiRender />, name: "Render" },
+        { icon: <FaBrain />, name: "Basic AI / ML" },
+        { icon: <SiTensorflow />, name: "TensorFlow" },
       ],
     },
   ];
@@ -120,6 +120,12 @@ export const AboutMeSkills = ({ lang = "en" }) => {
       <div className="about hero-about">
 
         <h2>{t.title}</h2>
+
+        <p className="about-highlight">
+          {lang === "en"
+            ? "Specialized in booking systems and business management applications"
+            : "Especializado en sistemas de turnos y gestión de negocios"}
+        </p>
 
         <p>{t.p1}</p>
         <p>{t.p2}</p>
